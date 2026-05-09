@@ -3,857 +3,2019 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>馬丘比丘購票攻略 2026</title>
+<title>秘魯家庭旅遊 2026 · 9/6–9/18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background: #f5f0eb; color: #2c2c2c; line-height: 1.7; }
-
-  /* ── Header ── */
-  .hero {
-    background: linear-gradient(135deg, #1a3a2a 0%, #2d6a4f 60%, #52b788 100%);
-    color: white; text-align: center; padding: 60px 20px 50px;
+  :root {
+    --cream:    #F5F0E8;
+    --brown:    #3D2B1F;
+    --gold:     #D4A853;
+    --gold-lt:  #F0D9A0;
+    --lima:     #0A7070;
+    --sacred:   #5A7A50;
+    --machu:    #C4622D;
+    --cusco:    #8B6220;
+    --iquitos:  #1E6B45;
+    --classic:  #C4622D;
+    --optional: #2D6A4F;
+    --nav-w:    220px;
+    --radius:   12px;
   }
-  .hero h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.5px; }
-  .hero p { font-size: 1.05rem; margin-top: 10px; opacity: 0.88; }
-  .badge { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 14px; font-size: 0.85rem; margin-top: 12px; }
 
-  /* ── Layout ── */
-  .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-  section { margin: 40px 0; }
-  h2 { font-size: 1.5rem; font-weight: 700; color: #1a3a2a; border-left: 4px solid #52b788; padding-left: 14px; margin-bottom: 20px; }
-  h3 { font-size: 1.1rem; font-weight: 700; color: #2d6a4f; margin-bottom: 10px; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* ── Cards ── */
-  .card { background: white; border-radius: 14px; padding: 24px; margin-bottom: 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    display: flex;
+    min-height: 100vh;
+  }
 
-  /* ── Route Cards ── */
-  .route-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .route-num { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: white; flex-shrink: 0; }
-  .c1 { background: #e67e22; }
-  .c2 { background: #2d6a4f; }
-  .c3 { background: #2980b9; }
+  /* ── Progress bar ─────────────────────────── */
+  #progress-bar {
+    position: fixed; top: 0; left: 0;
+    height: 4px; width: 0%;
+    background: linear-gradient(90deg, var(--gold), var(--classic));
+    z-index: 1000;
+    transition: width 0.1s linear;
+  }
 
-  .tag { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 10px; border-radius: 20px; margin: 2px; }
-  .tag-green { background: #d8f3dc; color: #1b4332; }
-  .tag-orange { background: #fde8d0; color: #7c3a05; }
-  .tag-blue { background: #d0e8fd; color: #053c7c; }
-  .tag-red { background: #fde0e0; color: #7c0505; }
-  .tag-best { background: #2d6a4f; color: white; }
+  /* ── Sidebar nav ──────────────────────────── */
+  #sidebar {
+    position: fixed; top: 0; left: 0;
+    width: var(--nav-w);
+    height: 100vh;
+    background: var(--brown);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 0 20px;
+    z-index: 900;
+    overflow-y: auto;
+  }
 
-  .detail-row { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
-  .info-list { list-style: none; margin-top: 10px; }
-  .info-list li { padding: 5px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.93rem; }
-  .info-list li:last-child { border-bottom: none; }
-  .info-list li::before { content: "▸ "; color: #52b788; font-size: 0.8rem; }
+  #sidebar .brand {
+    padding: 0 20px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 16px;
+  }
+  #sidebar .brand h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--gold);
+  }
+  #sidebar .brand p {
+    font-size: 0.72rem;
+    opacity: 0.6;
+    margin-top: 4px;
+  }
 
-  /* ── Price Table ── */
-  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-  th { background: #1a3a2a; color: white; padding: 10px 14px; text-align: left; }
-  td { padding: 10px 14px; border-bottom: 1px solid #eee; vertical-align: top; }
-  tr:last-child td { border-bottom: none; }
-  tr:nth-child(even) td { background: #f9f9f7; }
-  .price { font-weight: 700; color: #2d6a4f; }
-  .price-total { font-weight: 700; color: #c0392b; }
-  .highlight-row td { background: #d8f3dc !important; }
+  #sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  #sidebar nav a:hover,
+  #sidebar nav a.active {
+    color: #fff;
+    background: rgba(255,255,255,0.07);
+    border-left-color: var(--gold);
+  }
+  #sidebar nav a .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
 
-  /* ── Transport ── */
-  .train-card { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; }
-  .train-icon { font-size: 2rem; }
-  .train-type { font-weight: 700; font-size: 1rem; color: #1a3a2a; }
-  .train-meta { font-size: 0.88rem; color: #555; margin-top: 3px; }
+  /* ── Main content ─────────────────────────── */
+  main {
+    margin-left: var(--nav-w);
+    flex: 1;
+    max-width: 900px;
+    padding: 48px 40px 80px;
+  }
 
-  /* ── Timeline / Itinerary ── */
-  .plan-header { background: linear-gradient(90deg, #1a3a2a, #2d6a4f); color: white; border-radius: 12px 12px 0 0; padding: 18px 24px; }
-  .plan-header h3 { color: white; margin: 0; font-size: 1.15rem; }
-  .plan-header .subtitle { font-size: 0.88rem; opacity: 0.85; margin-top: 4px; }
-  .plan-body { background: white; border-radius: 0 0 12px 12px; padding: 24px; margin-bottom: 28px; box-shadow: 0 3px 14px rgba(0,0,0,0.08); }
-  .day-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: #2d6a4f; letter-spacing: 1px; margin: 18px 0 10px; border-bottom: 2px solid #d8f3dc; padding-bottom: 4px; }
-  .timeline { list-style: none; }
-  .timeline li { display: grid; grid-template-columns: 80px 1fr; gap: 12px; padding: 7px 0; font-size: 0.92rem; border-bottom: 1px dotted #eee; }
-  .timeline li:last-child { border-bottom: none; }
-  .tl-time { font-weight: 700; color: #2d6a4f; white-space: nowrap; font-size: 0.88rem; }
-  .tl-event { color: #333; }
-  .tl-note { font-size: 0.8rem; color: #888; margin-top: 2px; }
-  .plan-summary { background: #f0faf4; border-radius: 8px; padding: 14px 18px; margin-top: 16px; font-size: 0.9rem; }
-  .plan-summary strong { color: #1a3a2a; }
+  /* ── Hero ─────────────────────────────────── */
+  #hero {
+    text-align: center;
+    padding: 48px 0 36px;
+    border-bottom: 2px solid var(--gold-lt);
+    margin-bottom: 48px;
+  }
+  #hero .subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  #hero h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  #hero .meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.82rem;
+  }
+  #hero .meta span {
+    background: var(--gold-lt);
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: var(--brown);
+  }
 
-  /* ── Warning / Tips ── */
-  .warning { background: #fff3cd; border-left: 4px solid #f39c12; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 0.92rem; }
-  .warning strong { color: #7c4a00; }
-  .tip { background: #d8f3dc; border-left: 4px solid #2d6a4f; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 0.92rem; }
-  .tip strong { color: #1a3a2a; }
+  /* ── Route strip ──────────────────────────── */
+  .route-strip {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    background: var(--brown);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 56px;
+  }
+  .route-stop {
+    flex: 1;
+    min-width: 100px;
+    padding: 14px 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 0.78rem;
+    position: relative;
+  }
+  .route-stop .city-name { font-weight: 600; font-size: 0.85rem; }
+  .route-stop .days { opacity: 0.65; font-size: 0.72rem; margin-top: 2px; }
+  .route-stop.lima    { background: var(--lima); }
+  .route-stop.sacred  { background: var(--sacred); }
+  .route-stop.machu   { background: var(--machu); }
+  .route-stop.cusco   { background: var(--cusco); }
+  .route-stop.iquitos { background: var(--iquitos); }
+  .route-arrow {
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    padding: 0 2px;
+    flex-shrink: 0;
+  }
 
-  /* ── Buttons / Links ── */
-  .btn { display: inline-block; background: #2d6a4f; color: white; padding: 9px 20px; border-radius: 8px; text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-top: 12px; transition: background 0.2s; }
-  .btn:hover { background: #1a3a2a; }
-  .btn-outline { background: transparent; border: 2px solid #2d6a4f; color: #2d6a4f; margin-left: 8px; }
-  .btn-outline:hover { background: #2d6a4f; color: white; }
+  /* ── Calendar overview ────────────────────── */
+  #overview { margin-bottom: 60px; }
 
-  /* ── Footer ── */
-  footer { background: #1a3a2a; color: rgba(255,255,255,0.7); text-align: center; padding: 28px 20px; font-size: 0.85rem; margin-top: 60px; }
-  footer a { color: #52b788; }
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-lt);
+  }
 
-  @media (max-width: 640px) {
-    .hero h1 { font-size: 1.7rem; }
-    .card-grid { grid-template-columns: 1fr; }
-    .timeline li { grid-template-columns: 65px 1fr; }
+  /* ── City section ─────────────────────────── */
+  .city-section { margin-bottom: 72px; scroll-margin-top: 20px; }
+
+  .city-banner {
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 32px 28px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .city-banner.lima    { background: linear-gradient(135deg, var(--lima) 0%, #0e9696 100%); }
+  .city-banner.sacred  { background: linear-gradient(135deg, var(--sacred) 0%, #7aad6c 100%); }
+  .city-banner.machu   { background: linear-gradient(135deg, var(--machu) 0%, #e8834a 100%); }
+  .city-banner.cusco   { background: linear-gradient(135deg, var(--cusco) 0%, #c49030 100%); }
+  .city-banner.iquitos { background: linear-gradient(135deg, var(--iquitos) 0%, #2d9060 100%); }
+
+  .city-banner h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  .city-banner .foreign { opacity: 0.75; font-size: 0.9rem; margin-top: 2px; }
+  .city-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .city-body {
+    background: #fff;
+    border-radius: 0 0 var(--radius) var(--radius);
+    border: 1px solid rgba(0,0,0,0.07);
+    border-top: none;
+    padding: 28px;
+  }
+
+  /* ── Category label ───────────────────────── */
+  .cat-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .cat-label.classic  { background: #FDE8DC; color: var(--classic); }
+  .cat-label.optional { background: #D8EEE6; color: var(--optional); }
+
+  .cat-group { margin-bottom: 28px; }
+
+  /* ── Activity cards ───────────────────────── */
+  .activity-cards { display: flex; flex-direction: column; gap: 12px; }
+
+  .activity-card {
+    display: flex;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #EEE;
+    background: var(--cream);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .activity-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+    transform: translateY(-1px);
+  }
+  .activity-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .activity-content { flex: 1; }
+  .activity-content h4 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .activity-content h4 .foreign {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #888;
+    margin-left: 4px;
+  }
+  .activity-content p {
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  /* ── Reference chips ──────────────────────── */
+  .refs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ref-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid #DDD;
+    color: #444;
+    background: #fff;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .ref-chip:hover {
+    background: var(--gold-lt);
+    border-color: var(--gold);
+    color: var(--brown);
+  }
+
+  /* ── Lodge comparison table ───────────────── */
+  .lodge-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-top: 8px; }
+  .lodge-table th {
+    background: #f0ebe3;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--gold-lt);
+  }
+  .lodge-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+  .lodge-table tr:last-child td { border-bottom: none; }
+  .lodge-table tr:hover td { background: #faf7f2; }
+
+  /* ── Transport box ────────────────────────── */
+  .transport-box {
+    background: #f8f6f2;
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin-top: 24px;
+    font-size: 0.82rem;
+    line-height: 1.65;
+  }
+  .transport-box strong { display: block; margin-bottom: 4px; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); }
+
+  /* ── Ticket alert ─────────────────────────── */
+  .ticket-alert {
+    background: #FFF3E8;
+    border: 1px solid #F4C89A;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-top: 20px;
+    font-size: 0.82rem;
+  }
+  .ticket-alert .alert-title {
+    font-weight: 600;
+    color: var(--classic);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ticket-alert ul { padding-left: 18px; }
+  .ticket-alert li { margin-bottom: 6px; line-height: 1.5; }
+
+  /* ── Tips section ─────────────────────────── */
+  #tips { margin-bottom: 48px; }
+
+  .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .tip-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 22px;
+    border: 1px solid rgba(0,0,0,0.07);
+  }
+  .tip-card h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tip-card ul { list-style: none; padding: 0; }
+  .tip-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0ece6;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    display: flex;
+    gap: 8px;
+  }
+  .tip-card li:last-child { border-bottom: none; }
+  .tip-card li::before { content: '·'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  .priority-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  .priority-badge.high { background: #FFE0D8; color: #C4622D; }
+  .priority-badge.med  { background: #FFF3D0; color: #8B6220; }
+
+  /* ── Footer ───────────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.75rem;
+    color: #aaa;
+    border-top: 1px solid var(--gold-lt);
+    margin-top: 40px;
+  }
+
+  /* ── Divider ──────────────────────────────── */
+  .cat-divider { border: none; border-top: 1px dashed #e0d8cc; margin: 20px 0; }
+
+  /* ── Timeline ─────────────────────────────── */
+  .timeline { display: flex; flex-direction: column; }
+  .tl-day { display: grid; grid-template-columns: 72px 1fr; margin-bottom: 4px; }
+  .tl-date-col { display: flex; flex-direction: column; align-items: center; padding-top: 4px; }
+  .tl-date-bubble {
+    width: 54px; height: 54px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s; flex-shrink: 0;
+  }
+  .tl-date-bubble:hover { transform: scale(1.08); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+  .tl-month  { font-size: 0.57rem; opacity: 0.75; }
+  .tl-day-num { font-size: 1.1rem; line-height: 1.1; }
+  .tl-wd     { font-size: 0.57rem; opacity: 0.7; }
+  .tl-line   { flex: 1; width: 2px; background: linear-gradient(to bottom, rgba(61,43,31,0.15), transparent); margin: 6px auto 0; }
+  .tl-content { padding: 4px 0 20px 16px; }
+  .tl-city-label {
+    display: inline-block; font-size: 0.67rem; font-weight: 700;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    color: #fff; padding: 3px 10px; border-radius: 12px; margin-bottom: 8px;
+  }
+  .tl-slots { display: flex; flex-direction: column; gap: 3px; }
+  .tl-slot {
+    display: flex; align-items: flex-start; gap: 8px;
+    padding: 6px 10px; border-radius: 7px; font-size: 0.8rem; line-height: 1.45;
+  }
+  .tl-time { font-size: 0.7rem; font-weight: 600; color: #999; white-space: nowrap; min-width: 52px; padding-top: 1px; flex-shrink: 0; }
+  .tl-flight   { background: #FFF3D0; border-left: 3px solid var(--gold); }
+  .tl-train    { background: #E0F4F4; border-left: 3px solid #0A8080; }
+  .tl-bus      { background: #EDF6EC; border-left: 3px solid #4A8A40; }
+  .tl-boat     { background: #E3F2FB; border-left: 3px solid #1E7CC0; }
+  .tl-activity { background: #fff; border: 1px solid #f0ece6; }
+  .tl-note     { background: #FAFAFA; color: #999; font-size: 0.76rem; border: 1px dashed #e0d8cc; }
+  .tl-pending  {
+    display: inline-block; font-size: 0.62rem; background: rgba(0,0,0,0.07);
+    color: #888; padding: 1px 6px; border-radius: 10px; margin-left: 4px;
+    font-weight: 600; white-space: nowrap; vertical-align: middle;
+  }
+
+  /* ── City intro ───────────────────────────── */
+  .city-intro {
+    padding: 0 0 20px; margin-bottom: 24px;
+    border-bottom: 1px dashed #e0d8cc;
+    font-size: 0.85rem; line-height: 1.75; color: #666;
+  }
+
+  /* ── Extra cat-label variants ─────────────── */
+  .cat-label.food    { background: #FEF0DC; color: #B5500C; }
+  .cat-label.lodging { background: #E4EEFF; color: #2E5EB8; }
+  .cat-label.cnotes  { background: #FFEDEE; color: #B03030; }
+
+  /* ── Food grid ────────────────────────────── */
+  .food-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+  .food-item { background: var(--cream); border-radius: 10px; padding: 12px 14px; border: 1px solid #eee; }
+  .food-item-name { font-family: 'Noto Serif TC', serif; font-size: 0.9rem; font-weight: 600; margin-bottom: 2px; }
+  .food-item-foreign { font-size: 0.72rem; color: #bbb; margin-bottom: 4px; }
+  .food-item-desc { font-size: 0.78rem; color: #666; line-height: 1.5; }
+
+  /* ── Lodging list ─────────────────────────── */
+  .lodging-list { display: flex; flex-direction: column; gap: 8px; }
+  .lodging-area { background: var(--cream); border-radius: 10px; padding: 12px 14px; border: 1px solid #eee; font-size: 0.82rem; line-height: 1.55; }
+  .lodging-area-name { font-family: 'Noto Serif TC', serif; font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .lodging-badge { font-size: 0.62rem; background: #E4EEFF; color: #2E5EB8; padding: 1px 7px; border-radius: 10px; font-weight: 600; }
+  .lodging-desc { color: #666; }
+
+  /* ── City notes list ──────────────────────── */
+  .city-notes-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+  .city-notes-list li {
+    font-size: 0.82rem; line-height: 1.55;
+    padding: 7px 10px; background: #fff8f5;
+    border-radius: 7px; border-left: 3px solid #f4c8a0;
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .city-notes-list li::before { content: '⚠️'; flex-shrink: 0; }
+
+  /* ── Lodge table responsive wrapper ──────── */
+  .lodge-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* ── Mobile hamburger button ──────────────── */
+  #menu-btn { display: none; }
+
+  /* ── Responsive ───────────────────────────── */
+  @media (min-width: 721px) {
+    #sidebar   { transform: none !important; }
+    #menu-btn  { display: none !important; }
+  }
+
+  @media (max-width: 720px) {
+    #menu-btn {
+      display: flex;
+      position: fixed; top: 14px; right: 16px;
+      z-index: 1100;
+      background: var(--brown); color: var(--gold);
+      border: none; border-radius: 8px;
+      width: 42px; height: 42px; font-size: 1.3rem;
+      cursor: pointer; align-items: center; justify-content: center;
+    }
+    #sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    #sidebar.sidebar-open { transform: translateX(0); }
+    #sidebar-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.45); z-index: 850;
+    }
+    #sidebar-overlay.active { display: block; }
+    main { margin-left: 0; padding: 24px 16px 80px; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .route-strip { flex-direction: column; }
+    .route-arrow { display: none; }
+    .food-grid { grid-template-columns: 1fr 1fr; }
+    .tl-day { grid-template-columns: 56px 1fr; }
+    .tl-date-bubble { width: 46px; height: 46px; }
+    .tl-day-num { font-size: 0.95rem; }
+    #hero h2 { font-size: 1.8rem; }
+    .city-banner h2 { font-size: 1.45rem; }
+    .activity-card { padding: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    .food-grid { grid-template-columns: 1fr; }
+    main { padding: 20px 12px 80px; }
+    #hero h2 { font-size: 1.5rem; }
   }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="container">
-    <h1>🏔 馬丘比丘購票攻略</h1>
-    <p>路線 × 套餐 × 交通 × 行程安排｜2026 年版</p>
-    <div class="badge">適合 6 人小團 · 庫斯科出發 · 含華納比丘</div>
+<div id="progress-bar"></div>
+
+<button id="menu-btn" aria-label="開啟選單">☰</button>
+<div id="sidebar-overlay"></div>
+
+<!-- ── Sidebar ──────────────────────────────── -->
+<aside id="sidebar">
+  <div class="brand">
+    <h1>秘魯家庭旅遊<br>2026 · 9/6–9/18</h1>
+    <p>13天 · 6人 · 方案A</p>
   </div>
-</div>
+  <nav>
+    <a href="#overview" class="nav-item">
+      <span class="dot" style="background:#D4A853"></span>行程總覽
+    </a>
+    <a href="#lima" class="nav-item">
+      <span class="dot" style="background:var(--lima)"></span>利馬 · 2天
+    </a>
+    <a href="#sacred" class="nav-item">
+      <span class="dot" style="background:var(--sacred)"></span>聖谷 · 2天
+    </a>
+    <a href="#machu" class="nav-item">
+      <span class="dot" style="background:var(--machu)"></span>馬丘比丘 · 2天
+    </a>
+    <a href="#cusco" class="nav-item">
+      <span class="dot" style="background:var(--cusco)"></span>庫斯科 · 1天
+    </a>
+    <a href="#iquitos" class="nav-item">
+      <span class="dot" style="background:var(--iquitos)"></span>伊基托斯 · 4天
+    </a>
+    <a href="#tips" class="nav-item">
+      <span class="dot" style="background:#888"></span>注意事項 &amp; 訂票
+    </a>
+  </nav>
+</aside>
 
-<div class="container">
+<!-- ── Main ─────────────────────────────────── -->
+<main>
 
-<!-- ══════════════════════════════════
-     SECTION 1 — 遺址路線說明
-════════════════════════════════════ -->
-<section>
-  <h2>一、遺址路線總覽</h2>
+  <!-- Hero -->
+  <section id="hero">
+    <p class="subtitle">家庭旅遊計畫 · 方案 A</p>
+    <h2>秘魯 13 天行程</h2>
+    <div class="meta">
+      <span>📅 2026年 9月6日–18日</span>
+      <span>👨‍👩‍👧‍👦 6人同行，含2位長輩</span>
+      <span>🏔️ 先高原，後叢林</span>
+    </div>
+  </section>
 
-  <div class="warning">
-    <strong>⚠ 重要：</strong>馬丘比丘採「分時段、分路線」入場制，每種路線與時段皆獨立購票，無法入場後自由切換。每天共 10 個時段，建議提前 <strong>4 個月</strong>以上訂票。
+  <!-- Route strip -->
+  <div class="route-strip">
+    <div class="route-stop lima"><div class="city-name">✈ 利馬</div><div class="days">9/6–7 · 2天</div></div>
+    <div class="route-arrow">›</div>
+    <div class="route-stop sacred"><div class="city-name">聖谷</div><div class="days">9/8–9 · 2天</div></div>
+    <div class="route-arrow">›</div>
+    <div class="route-stop machu"><div class="city-name">馬丘比丘</div><div class="days">9/10–11 · 2天</div></div>
+    <div class="route-arrow">›</div>
+    <div class="route-stop cusco"><div class="city-name">庫斯科</div><div class="days">9/12 · 1天</div></div>
+    <div class="route-arrow">›</div>
+    <div class="route-stop iquitos"><div class="city-name">伊基托斯</div><div class="days">9/13–17 · 4天</div></div>
   </div>
 
-  <div class="card-grid">
+  <!-- Overview Timeline -->
+  <section id="overview">
+    <h2 class="section-title">行程總表</h2>
+    <div class="timeline">
 
-    <!-- Circuit 1 -->
-    <div class="card">
-      <div class="route-header">
-        <div class="route-num c1">1</div>
-        <div>
-          <div style="font-weight:700;font-size:1rem;">路線一｜全景環線</div>
-          <div style="font-size:0.83rem;color:#777;">Circuito 1 · Panoramic</div>
+      <!-- 9/6 利馬 D1 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--lima)" href="#lima">
+            <span class="tl-month">9月</span><span class="tl-day-num">6</span><span class="tl-wd">六</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--lima)">利馬 · D1</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-flight"><span class="tl-time">08:05</span><span>✈️ 台北組抵達利馬 Jorge Chávez 機場（KE7965 / LATAM LA2477）</span></div>
+            <div class="tl-slot tl-note"><span class="tl-time"></span><span>ℹ️ 新加坡組昨晚 21:40 已先抵達，稍作休息</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">上午</span><span>🚗 前往米拉弗洛雷斯飯店辦理 check-in，建議補眠</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🌊 懸崖公園（Parque del Amor）散步，欣賞太平洋夕陽</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">晚上</span><span>🍽 第一頓秘魯 Ceviche，歡迎抵達！</span></div>
+          </div>
         </div>
       </div>
-      <div class="detail-row">
-        <span class="tag tag-orange">攝影首選</span>
-        <span class="tag tag-blue">較少遊客</span>
-      </div>
-      <ul class="info-list">
-        <li>可選馬丘比丘山（3 小時，需 18 歲以上）</li>
-        <li>上層觀景台（2.5 小時）</li>
-        <li>太陽門 Intipunku（4 小時，旺季開放）</li>
-        <li>印加橋（2–3 小時，旺季開放）</li>
-        <li>注意：<strong>不含下層主遺址</strong>入內</li>
-      </ul>
-      <div class="detail-row" style="margin-top:12px;">
-        <span class="tag tag-green">⏱ 2.5–4 小時</span>
-        <span class="tag tag-green">💰 $45–48</span>
-      </div>
-      <div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;">
-        <div style="font-size:0.78rem;font-weight:700;color:#999;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">購票連結</div>
-        <a class="btn" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方（西班牙文）</a>
-        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.getyourguide.com/machu-picchu-l1570/oficjalne-bilety-do-machu-picchu-t122789/" target="_blank">GetYourGuide</a>
-        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-Entrance-ticket/d4928-175410P8" target="_blank">Viator</a>
-      </div>
-    </div>
 
-    <!-- Circuit 2 -->
-    <div class="card" style="border: 2px solid #2d6a4f;">
-      <div class="route-header">
-        <div class="route-num c2">2</div>
-        <div>
-          <div style="font-weight:700;font-size:1rem;">路線二｜經典路線</div>
-          <div style="font-size:0.83rem;color:#777;">Circuito 2 · Classic</div>
+      <!-- 9/7 利馬 D2 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--lima)" href="#lima">
+            <span class="tl-month">9月</span><span class="tl-day-num">7</span><span class="tl-wd">日</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--lima)">利馬 · D2</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-activity"><span class="tl-time">上午</span><span>🏛 拉爾科博物館（9am 出發，約 2–3 小時）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>⛪ 利馬歷史中心（可選）或米拉弗洛雷斯閒逛購物</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🎨 巴蘭科藝術區漫步，嘆息橋 &amp; 文青咖啡館</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">晚上</span><span>🍽 Lomo Saltado 或 Anticuchos 烤牛心串</span></div>
+          </div>
         </div>
       </div>
-      <div class="detail-row">
-        <span class="tag tag-best">★ 最熱門</span>
-        <span class="tag tag-green">首訪必選</span>
-      </div>
-      <ul class="info-list">
-        <li>太陽神殿 Temple of the Sun</li>
-        <li>神聖廣場 Sacred Plaza</li>
-        <li>皇家寢宮 Royal Quarters</li>
-        <li>標誌性梯田俯瞰角度</li>
-        <li>全程約 <strong>1.5 公里</strong>，起伏平緩</li>
-      </ul>
-      <div class="detail-row" style="margin-top:12px;">
-        <span class="tag tag-green">⏱ 約 2.5 小時</span>
-        <span class="tag tag-green">💰 $47–62</span>
-        <span class="tag tag-orange">每天 10 時段</span>
-      </div>
-      <div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;">
-        <div style="font-size:0.78rem;font-weight:700;color:#999;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">購票連結</div>
-        <a class="btn" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方（西班牙文）</a>
-        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-entrance-ticket-to-circuit-2-t590957/" target="_blank">GetYourGuide</a>
-        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-Entrance-Ticket/d4928-106179P3" target="_blank">Viator</a>
-      </div>
-    </div>
 
-    <!-- Circuit 3 -->
-    <div class="card">
-      <div class="route-header">
-        <div class="route-num c3">3</div>
-        <div>
-          <div style="font-weight:700;font-size:1rem;">路線三｜皇家路線</div>
-          <div style="font-size:0.83rem;color:#777;">Circuito 3 · Royalty</div>
+      <!-- 9/8 聖谷 D1 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--sacred)" href="#sacred">
+            <span class="tl-month">9月</span><span class="tl-day-num">8</span><span class="tl-wd">一</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--sacred)">聖谷 · D1</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-flight"><span class="tl-time">07–09</span><span>✈️ 利馬（LIM）→ 庫斯科（CUZ），建議早班，約 1 小時<span class="tl-pending">待確認</span></span></div>
+            <div class="tl-slot tl-bus"><span class="tl-time">10–11</span><span>🚐 下機後私人接送直往聖谷，不在庫斯科停留，約 1.5 小時<span class="tl-pending">待確認</span></span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🛍 畢薩克傳統市集（逢週日最盛大，週一亦有小市集）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🍵 飯店喝古柯葉茶，輕度活動適應高原</span></div>
+            <div class="tl-slot tl-note"><span class="tl-time">晚上</span><span>🌙 早睡！禁酒，高原適應的關鍵夜晚</span></div>
+          </div>
         </div>
       </div>
-      <div class="detail-row">
-        <span class="tag tag-blue">深度探索</span>
-        <span class="tag tag-orange">含農業區</span>
-      </div>
-      <ul class="info-list">
-        <li>華納比丘山 Huayna Picchu（+$65，限 400 人/天）</li>
-        <li>下層廢墟 Lower Ruins</li>
-        <li>大岩洞 Great Cavern（6–10 月開放，5 小時）</li>
-        <li>小華納比丘 Huchuy Picchu（季節性）</li>
-        <li>城市區 + 農業梯田全覽</li>
-      </ul>
-      <div class="detail-row" style="margin-top:12px;">
-        <span class="tag tag-green">⏱ 2.5–5 小時</span>
-        <span class="tag tag-red">華納比丘需提前訂</span>
-      </div>
-      <div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;">
-        <div style="font-size:0.78rem;font-weight:700;color:#999;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">購票連結</div>
-        <a class="btn" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方（西班牙文）</a>
-        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-circuit-3-entry-ticket-t30551/" target="_blank">GetYourGuide</a>
-        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.viator.com/tours/Sacred-Valley/MACHU-PICCHU-AND-HUAYNA-PICCHU-ENTRANCE-TICKET-08-00-AM/d4928-117644P18" target="_blank">Viator（含華納比丘）</a>
-      </div>
-    </div>
 
-  </div><!-- /card-grid -->
-
-  <!-- 加購登山選項 -->
-  <div class="card" style="margin-top:0;">
-    <h3>加購登山門票比較</h3>
-    <table>
-      <thead>
-        <tr><th>山峰</th><th>時段</th><th>名額/天</th><th>難度</th><th>費用/人</th><th>購票連結</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>華納比丘山</strong><br><small>Huayna Picchu</small></td>
-          <td>06:00 / 07:00 兩梯次</td>
-          <td><strong class="price-total">400 人</strong></td>
-          <td>⬛⬛⬛⬜ 陡</td>
-          <td class="price">~$53–65</td>
-          <td>
-            <a class="btn" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a>
-            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-huayana-picchu-entry-ticket-t887624/" target="_blank">GetYourGuide</a>
-            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-and-Huayna-Picchu-Admission-Ticket-2026-Sacred-Valley-BOOK-NOW/d4928-5243P121" target="_blank">Viator</a>
-          </td>
-        </tr>
-        <tr>
-          <td><strong>馬丘比丘山</strong><br><small>Machu Picchu Mountain</small></td>
-          <td>06:00 起</td>
-          <td>800 人</td>
-          <td>⬛⬛⬜⬜ 中</td>
-          <td class="price">~$53–85</td>
-          <td>
-            <a class="btn" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a>
-            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-huayna-picchu-mountain-entry-ticket-t631172/" target="_blank">GetYourGuide</a>
-            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.viator.com/tours/Sacred-Valley/Huaynapicchu-hike-7am-Machu-Picchu-entrance-ticket-6am/d4928-103153P10" target="_blank">Viator</a>
-          </td>
-        </tr>
-        <tr>
-          <td><strong>太陽門</strong><br><small>Intipunku</small></td>
-          <td>包含在路線 1</td>
-          <td>無限制</td>
-          <td>⬛⬜⬜⬜ 易</td>
-          <td class="price">含路線 1 票價</td>
-          <td>
-            <a class="btn" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a>
-            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.getyourguide.com/machu-picchu-l1570/oficjalne-bilety-do-machu-picchu-t122789/" target="_blank">GetYourGuide</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="warning" style="margin-top:14px;">
-      <strong>⚠ 緊急提醒：</strong>你們 6 人計劃去華納比丘（9 月旺季），每天僅 400 個名額，<strong>現在就要訂！</strong>等愈久愈難搶到。
-    </div>
-  </div>
-
-</section>
-
-
-<!-- ══════════════════════════════════
-     SECTION 2 — 所有票務產品一覽
-════════════════════════════════════ -->
-<section>
-  <h2>二、所有票務產品一覽</h2>
-
-  <!-- 2A 個別單項票 -->
-  <h3 style="margin-bottom:12px;">A. 個別單項票（可分開購買，自行搭配路線）</h3>
-  <div class="tip" style="margin-bottom:16px;">
-    <strong>💡 說明：</strong>每張票對應一條路線，不可入場後換線。6 人可各選不同路線，但需分別訂票。官方網站僅有西班牙文，每帳號限購 5 張；GetYourGuide / Viator 為英文介面且有退款保障，溢價約 $5–15/人。
-  </div>
-
-  <div class="card" style="padding:0;overflow:hidden;">
-    <table>
-      <thead>
-        <tr>
-          <th>票種</th>
-          <th>適用路線</th>
-          <th style="white-space:nowrap;">官方價/人</th>
-          <th>官方售票</th>
-          <th>GetYourGuide</th>
-          <th>Viator</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <strong>路線一｜全景環線</strong><br>
-            <small style="color:#888;">Circuit 1 · Panoramic</small>
-          </td>
-          <td>上層觀景台、太陽門、印加橋、馬丘比丘山（需另購）</td>
-          <td class="price">~$45–48</td>
-          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/machu-picchu-l1570/oficjalne-bilety-do-machu-picchu-t122789/" target="_blank">查看</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-Entrance-ticket/d4928-175410P8" target="_blank">查看</a></td>
-        </tr>
-        <tr class="highlight-row">
-          <td>
-            <strong>路線二｜經典路線 ★</strong><br>
-            <small style="color:#888;">Circuit 2 · Classic</small>
-          </td>
-          <td>太陽神殿、神聖廣場、皇家寢宮、標誌梯田視角</td>
-          <td class="price">~$47–62</td>
-          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-entrance-ticket-to-circuit-2-t590957/" target="_blank">查看</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-Entrance-Ticket/d4928-106179P3" target="_blank">查看</a></td>
-        </tr>
-        <tr>
-          <td>
-            <strong>路線三｜皇家路線</strong><br>
-            <small style="color:#888;">Circuit 3 · Royalty</small>
-          </td>
-          <td>下層廢墟、農業梯田、大岩洞（6–10月）、小華納比丘</td>
-          <td class="price">~$50–56</td>
-          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-circuit-3-entry-ticket-t30551/" target="_blank">查看</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/MACHU-PICCHU-AND-HUAYNA-PICCHU-ENTRANCE-TICKET-08-00-AM/d4928-117644P18" target="_blank">查看（含HP）</a></td>
-        </tr>
-        <tr>
-          <td>
-            <strong>華納比丘山加購</strong><br>
-            <small style="color:#888;">Huayna Picchu Add-on</small>
-          </td>
-          <td>需搭配路線三購買，06:00 / 07:00 兩梯次，限 400 人</td>
-          <td class="price">~$53–65</td>
-          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-huayana-picchu-entry-ticket-t887624/" target="_blank">查看</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-and-Huayna-Picchu-Admission-Ticket-2026-Sacred-Valley-BOOK-NOW/d4928-5243P121" target="_blank">查看</a></td>
-        </tr>
-        <tr>
-          <td>
-            <strong>馬丘比丘山加購</strong><br>
-            <small style="color:#888;">Machu Picchu Mountain Add-on</small>
-          </td>
-          <td>需搭配路線一購買，06:00 起，限 800 人，較易訂到</td>
-          <td class="price">~$53–85</td>
-          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-huayna-picchu-mountain-entry-ticket-t631172/" target="_blank">查看</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/Huaynapicchu-hike-7am-Machu-Picchu-entrance-ticket-6am/d4928-103153P10" target="_blank">查看</a></td>
-        </tr>
-        <tr>
-          <td>
-            <strong>所有路線入口總覽</strong><br>
-            <small style="color:#888;">Browse All Tickets</small>
-          </td>
-          <td>在 GetYourGuide 瀏覽所有馬丘比丘票種</td>
-          <td class="price">各異</td>
-          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/machu-picchu-l1570/entry-tickets-tc123/" target="_blank">全部票種</a></td>
-          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/Cusco-attractions/Machu-Picchu/d937-a3358" target="_blank">全部票種</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="warning" style="margin-bottom:28px;">
-    <strong>⚠ 注意：</strong>路線二（經典）2026 年 8 月前已幾乎售罄；9 月名額仍緊俏。購票連結請以實際頁面為準，建議比對官方價格後再決定平台。
-  </div>
-
-</section>
-
-
-<!-- ══════════════════════════════════
-     SECTION 3 — 火車 & 交通
-════════════════════════════════════ -->
-<section>
-  <h2>三、火車 & 交通攻略</h2>
-
-  <!-- 交通流程 -->
-  <div class="card">
-    <h3>🗺 庫斯科 → 馬丘比丘 完整交通流程</h3>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;font-size:0.9rem;">
-      <div style="background:#1a3a2a;color:white;padding:8px 16px;border-radius:8px;font-weight:700;">庫斯科市區</div>
-      <div>🚐 廂型車<br><small>約 2 小時</small></div>
-      <div style="background:#2d6a4f;color:white;padding:8px 16px;border-radius:8px;font-weight:700;">歐雅亞坦坦博<br><small>火車站</small></div>
-      <div>🚂 火車<br><small>約 1.5 小時</small></div>
-      <div style="background:#52b788;color:white;padding:8px 16px;border-radius:8px;font-weight:700;">阿瓜斯卡連特斯<br><small>山腳小鎮</small></div>
-      <div>🚌 巴士<br><small>約 25 分鐘</small></div>
-      <div style="background:#e67e22;color:white;padding:8px 16px;border-radius:8px;font-weight:700;">馬丘比丘<br><small>遺址入口</small></div>
-    </div>
-    <p style="font-size:0.83rem;color:#888;margin-top:12px;">* 若選擇印加古道健行，火車站為庫斯科波羅依站或 KM 104，需另行確認路線</p>
-  </div>
-
-  <!-- 火車選項 -->
-  <div class="card">
-    <h3>🚂 火車等級比較（歐雅亞坦坦博 ↔ 阿瓜斯卡連特斯）</h3>
-    <table>
-      <thead>
-        <tr><th>等級</th><th>火車公司</th><th>車程</th><th>來回票/人</th><th>6 人總計</th><th>特色</th><th>訂票</th></tr>
-      </thead>
-      <tbody>
-        <tr class="highlight-row">
-          <td><strong>Expedition<br>（經濟艙）</strong></td>
-          <td>Peru Rail</td>
-          <td>約 1.5 小時</td>
-          <td class="price">~$80</td>
-          <td class="price-total">~$480</td>
-          <td>舒適、CP 值高，含餐車</td>
-          <td><a class="btn" href="https://www.perurail.com" target="_blank">Peru Rail</a></td>
-        </tr>
-        <tr>
-          <td><strong>Vistadome<br>（觀景艙）</strong></td>
-          <td>Peru Rail</td>
-          <td>約 1.5 小時</td>
-          <td class="price">~$140–180</td>
-          <td class="price-total">~$840–1,080</td>
-          <td>360° 玻璃天窗，沿途雪山美景</td>
-          <td><a class="btn" href="https://www.perurail.com" target="_blank">Peru Rail</a></td>
-        </tr>
-        <tr>
-          <td><strong>Voyager<br>（經濟艙）</strong></td>
-          <td>Inca Rail</td>
-          <td>約 1.5 小時</td>
-          <td class="price">~$80</td>
-          <td class="price-total">~$480</td>
-          <td>較少評論，整體投訴少於 Peru Rail</td>
-          <td><a class="btn" href="https://www.incarail.com" target="_blank">Inca Rail</a></td>
-        </tr>
-        <tr>
-          <td><strong>360°<br>（景觀車廂）</strong></td>
-          <td>Inca Rail</td>
-          <td>約 1.5 小時</td>
-          <td class="price">~$140–180</td>
-          <td class="price-total">~$840–1,080</td>
-          <td>穹頂設計，景色絕佳</td>
-          <td><a class="btn" href="https://www.incarail.com" target="_blank">Inca Rail</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="tip" style="margin-top:14px;">
-      <strong>💡 建議：</strong>去程選 Expedition 省費用，<strong>回程升級 Vistadome 或 360°</strong>，趁著下午光線最美的時候欣賞安地斯山風光。直接在 Peru Rail 或 Inca Rail 官網分開購買去回程不同等級即可。
-    </div>
-  </div>
-
-  <!-- 大巴 & 廂型車 -->
-  <div class="card-grid">
-    <div class="card">
-      <h3>🚌 山腳巴士（遺址接駁）</h3>
-      <ul class="info-list">
-        <li>路線：阿瓜斯卡連特斯 ↔ 遺址入口</li>
-        <li>費用：約 <strong>$12–14/人</strong>（來回）</li>
-        <li>車程：約 25–30 分鐘</li>
-        <li>首班：<strong>05:30 AM</strong>（推薦搶第一班）</li>
-        <li>末班：約 17:30（下山末班更晚）</li>
-        <li>排隊高峰：06:00 前已大排長龍</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>🚐 庫斯科廂型車接駁</h3>
-      <ul class="info-list">
-        <li>路線：庫斯科 → 歐雅亞坦坦博</li>
-        <li>費用：約 <strong>$8–15/人</strong>（單程）</li>
-        <li>車程：約 1.5–2 小時</li>
-        <li>一般發車：06:00–08:00（配合火車班次）</li>
-        <li>需自行向飯店或庫斯科旅行社預訂，或透過 GetYourGuide 搜尋「Cusco to Ollantaytambo transfer」</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- 關鍵時刻表 -->
-  <div class="card">
-    <h3>⏰ 關鍵時刻備忘</h3>
-    <table>
-      <thead><tr><th>節點</th><th>重要時間</th><th>備註</th></tr></thead>
-      <tbody>
-        <tr><td>馬丘比丘開門</td><td><strong>06:00 AM</strong></td><td>建議搶第一時段入場</td></tr>
-        <tr><td>華納比丘第一梯次</td><td><strong>06:00 AM</strong></td><td>每梯次約 200 人，3.5 小時</td></tr>
-        <tr><td>華納比丘第二梯次</td><td><strong>07:00 AM</strong></td><td>稍微充裕，但仍需提前訂</td></tr>
-        <tr><td>山腳巴士首班</td><td><strong>05:30 AM</strong></td><td>第一班上山必排隊，建議 05:00 前到站</td></tr>
-        <tr><td>遺址最後入場</td><td><strong>17:00</strong></td><td>最晚入場時間，依時段票而定</td></tr>
-        <tr><td>下山末班巴士</td><td><strong>17:30</strong></td><td>錯過需步行或等計程車</td></tr>
-        <tr><td>火車建議提前到站</td><td><strong>發車前 30 分鐘</strong></td><td>取票、安檢需要時間</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-</section>
-
-
-<!-- ══════════════════════════════════
-     SECTION 4 — 住宿推薦
-════════════════════════════════════ -->
-<section>
-  <h2>四、阿瓜斯卡連特斯住宿推薦（3 個價格區間）</h2>
-  <p style="font-size:0.9rem;color:#555;margin-bottom:16px;">以下為 6 人住宿 1 晚、依預算分三級的推薦選項，建議透過 Booking.com 確認實際空房與最新定價。</p>
-
-  <!-- Tier 1 -->
-  <h3 style="margin:0 0 12px;">💰 平價型｜$30–60/人晚（6人約 $180–360）</h3>
-  <div class="card-grid" style="margin-bottom:24px;">
-    <div class="card">
-      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Ecopackers Machupicchu Hostel</div>
-      <div class="detail-row">
-        <span class="tag tag-green">含早餐</span>
-        <span class="tag tag-blue">免費行李寄存</span>
-        <span class="tag tag-orange">山景露台</span>
-      </div>
-      <ul class="info-list" style="margin-top:10px;">
-        <li>距巴士站步行約 5 分鐘</li>
-        <li>附餐廳、吧台，社交氣氛佳</li>
-        <li>免費火車站接送</li>
-        <li>約 $13–29/人晚（視房型）</li>
-      </ul>
-      <a class="btn" style="margin-top:12px;" href="https://www.booking.com/hotel/pe/ecopackers-machupicchu-hostel.html" target="_blank">Booking.com 查價</a>
-    </div>
-    <div class="card">
-      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">El Tambo Machupicchu</div>
-      <div class="detail-row">
-        <span class="tag tag-green">市中心</span>
-        <span class="tag tag-blue">基本整潔</span>
-      </div>
-      <ul class="info-list" style="margin-top:10px;">
-        <li>位置便利，步行可達主要街道</li>
-        <li>設施簡單，主打性價比</li>
-        <li>約 $30–50/晚（整間）</li>
-        <li>適合預算有限、只需一晚的旅人</li>
-      </ul>
-      <a class="btn" style="margin-top:12px;" href="https://www.tripadvisor.com/Hotels-g304036-Aguas_Calientes_Machu_Picchu_Sacred_Valley_Cusco_Region-Hotels.html" target="_blank">TripAdvisor 查看</a>
-    </div>
-  </div>
-
-  <!-- Tier 2 -->
-  <h3 style="margin:0 0 12px;">💰💰 中等型｜$60–120/人晚（6人約 $360–720）★ 符合你的預算</h3>
-  <div class="card-grid" style="margin-bottom:24px;">
-    <div class="card" style="border:2px solid #2d6a4f;">
-      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Panorama B&B ⭐⭐⭐</div>
-      <div class="detail-row">
-        <span class="tag tag-best">推薦</span>
-        <span class="tag tag-green">含早餐</span>
-        <span class="tag tag-blue">河景陽台</span>
-      </div>
-      <ul class="info-list" style="margin-top:10px;">
-        <li>烏魯班巴河沿岸，私人陽台河景</li>
-        <li>近期翻新，環境安靜舒適</li>
-        <li>約 $75–102/晚（雙人間）</li>
-        <li>6 人可訂 3 間雙人房</li>
-      </ul>
-      <a class="btn" style="margin-top:12px;" href="https://www.booking.com/hotel/pe/panorama-b-amp-b.html" target="_blank">Booking.com 查價</a>
-    </div>
-    <div class="card" style="border:2px solid #2d6a4f;">
-      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Hotel Taypikala Machupicchu ⭐⭐⭐</div>
-      <div class="detail-row">
-        <span class="tag tag-best">推薦</span>
-        <span class="tag tag-orange">距巴士站 200m</span>
-        <span class="tag tag-blue">山景</span>
-      </div>
-      <ul class="info-list" style="margin-top:10px;">
-        <li><strong>距巴士站僅 200 公尺</strong>，早上搶頭班最方便</li>
-        <li>附餐廳、花園，近溫泉</li>
-        <li>提供按摩服務</li>
-        <li>約 $147–149/晚（雙人間）</li>
-      </ul>
-      <a class="btn" style="margin-top:12px;" href="https://www.booking.com/hotel/pe/taypikala-machupicchu.html" target="_blank">Booking.com 查價</a>
-      <a class="btn btn-outline" style="margin-top:12px;" href="https://www.taypikala.com/en/hotel-taypikalamachupicchu-in-machu-picchu/" target="_blank">官網</a>
-    </div>
-  </div>
-
-  <!-- Tier 3 -->
-  <h3 style="margin:0 0 12px;">💰💰💰 精品型｜$150+/人晚（6人約 $900+）</h3>
-  <div class="card-grid" style="margin-bottom:12px;">
-    <div class="card">
-      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Casa del Sol Machupicchu ⭐⭐⭐⭐</div>
-      <div class="detail-row">
-        <span class="tag tag-blue">市中心</span>
-        <span class="tag tag-green">禮賓服務</span>
-        <span class="tag tag-orange">近溫泉</span>
-      </div>
-      <ul class="info-list" style="margin-top:10px;">
-        <li>精緻裝潢，附餐廳及禮賓接送</li>
-        <li>鄰近熱門景點與溫泉</li>
-        <li>約 $149–244/晚（雙人間）</li>
-      </ul>
-      <a class="btn" style="margin-top:12px;" href="https://www.booking.com/hotel/pe/casa-del-sol-machupicchu.html" target="_blank">Booking.com 查價</a>
-    </div>
-    <div class="card">
-      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Inkaterra Machu Picchu Pueblo Hotel ⭐⭐⭐⭐⭐</div>
-      <div class="detail-row">
-        <span class="tag tag-best">頂級體驗</span>
-        <span class="tag tag-blue">雲霧森林</span>
-        <span class="tag tag-green">全包方案</span>
-      </div>
-      <ul class="info-list" style="margin-top:10px;">
-        <li>80 間白牆小屋嵌入雲霧森林，極具特色</li>
-        <li>含餐飲、自然導覽、設施</li>
-        <li>約 $333–592/晚</li>
-        <li>適合將住宿本身視為旅遊體驗的旅人</li>
-      </ul>
-      <a class="btn" style="margin-top:12px;" href="https://reservations.inkaterra.com/" target="_blank">官網訂房</a>
-      <a class="btn btn-outline" style="margin-top:12px;" href="https://www.tripadvisor.com/Hotel_Review-g304036-d306634-Reviews-Inkaterra_Machu_Picchu_Pueblo_Hotel-Aguas_Calientes_Machu_Picchu_Sacred_Valley_Cusco_Region.html" target="_blank">TripAdvisor</a>
-    </div>
-  </div>
-
-  <div class="tip">
-    <strong>💡 6人訂房建議：</strong>Taypikala 距巴士站最近（適合搶頭班），Panorama B&B 環境最安靜。建議在 Booking.com 搜尋「Aguas Calientes」，勾選「免費取消」並比較 9 月空房價格後再訂。
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     SECTION 5 — 私人導遊
-════════════════════════════════════ -->
-<section>
-  <h2>五、遺址私人導遊安排</h2>
-
-  <div class="card">
-    <h3>📋 基本資訊</h3>
-    <table>
-      <thead><tr><th>項目</th><th>說明</th></tr></thead>
-      <tbody>
-        <tr><td>是否強制</td><td>6 人以下<strong>不強制</strong>。10 人以上依法需持牌導遊。</td></tr>
-        <tr><td>半日導覽費用（6人）</td><td class="price">$80–150（約 2–3 小時）</td></tr>
-        <tr><td>全日導覽費用（6人）</td><td class="price">$150–300（4–6 小時）</td></tr>
-        <tr><td>平均每人費用</td><td class="price">$13–50/人</td></tr>
-        <tr><td>可用語言</td><td>西班牙文、英文、葡萄牙文（主流）；中文需特別指定</td></tr>
-        <tr><td>中文導遊</td><td>可用，需透過平台或代理商提前預約，費用略高</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="card-grid">
-    <div class="card">
-      <h3>🌐 線上預訂（推薦，有保障）</h3>
-      <ul class="info-list">
-        <li>支付有保障，可事先確認導遊語言與評價</li>
-        <li>費用含平台服務費約 15–25%，比現場略貴</li>
-        <li>建議提前 2–3 週預訂（9 月旺季）</li>
-      </ul>
-      <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;">
-        <a class="btn" href="https://www.getyourguide.com/machu-picchu-l1570/" target="_blank">GetYourGuide 導遊</a>
-        <a class="btn btn-outline" href="https://www.viator.com/tours/Sacred-Valley/2-5hr-Guided-Tour-of-Machu-Picchu-with-top-rated-Private-Guide/d4928-103153P4" target="_blank">Viator 私人導遊</a>
-      </div>
-    </div>
-    <div class="card">
-      <h3>🏘 現場僱用（彈性，較便宜）</h3>
-      <ul class="info-list">
-        <li>在阿瓜斯卡連特斯巴士站附近或遺址入口洽談</li>
-        <li>現場議價，直接溝通路線需求</li>
-        <li>品質參差，建議要求看執照（DIRCETUR）</li>
-        <li>費用約 $80–120（6 人，2–3 小時）</li>
-      </ul>
-      <div style="margin-top:12px;">
-        <a class="btn btn-outline" href="https://carlosmachupicchu.com/en/guides-in-languages-from-around-the-world" target="_blank">多語言導遊查詢</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip">
-    <strong>💡 中文導遊：</strong>如需中文導覽，建議透過 GetYourGuide 搜尋「Machu Picchu Mandarin guide」，或聯繫 carlosmachupicchu.com 確認是否有中文人選。現場臨時找到中文導遊的機率很低。
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════
-     SECTION 6 — 行程安排方案（3 個）
-════════════════════════════════════ -->
-<section>
-  <h2>六、行程安排方案（6 人 · 庫斯科出發 · 含華納比丘）</h2>
-
-  <div class="tip">
-    <strong>前提條件：</strong>第 1 天中午抵達阿瓜斯卡連特斯 → 下午走路線二（經典）→ 第 2 天一早進遺址 → 加爬華納比丘 → 午餐後 14:00–15:30 離開搭火車回庫斯科
-  </div>
-
-  <!-- ── 方案 A ── -->
-  <div>
-    <div class="plan-header">
-      <h3>方案 A｜標準悠閒版（首次推薦）</h3>
-      <div class="subtitle">時間最充裕 · 壓力最低 · 適合第一次來的旅人</div>
-    </div>
-    <div class="plan-body">
-
-      <div class="day-label">Day 1 — 庫斯科出發 · 抵達 · 下午參觀</div>
-      <ul class="timeline">
-        <li><span class="tl-time">07:00</span><div class="tl-event">廂型車從庫斯科飯店出發前往歐雅亞坦坦博<div class="tl-note">需提前預訂接駁車（約 $8–15/人），或由飯店協助安排共乘廂型車</div></div></li>
-        <li><span class="tl-time">09:00</span><div class="tl-event">抵達歐雅亞坦坦博火車站，辦理登車<div class="tl-note">建議提前 30 分鐘到，可買水和零食</div></div></li>
-        <li><span class="tl-time">09:30</span><div class="tl-event">🚂 搭乘 Expedition 火車出發</div></li>
-        <li><span class="tl-time">11:00</span><div class="tl-event">抵達阿瓜斯卡連特斯，辦理入住<div class="tl-note">中等住宿推薦：Rupa Wasi Lodge / Inti Punku Hotel（$70–100/人/晚，含早）</div></div></li>
-        <li><span class="tl-time">11:30</span><div class="tl-event">🍽 鎮上午餐（主街 Av. Imperio de los Incas 有多家餐廳）<div class="tl-note">推薦嘗試烤羊駝（Alpaca）或秘魯燉牛肉</div></div></li>
-        <li><span class="tl-time">13:00</span><div class="tl-event">🚌 搭巴士上山（25 分鐘）</div></li>
-        <li><span class="tl-time">13:30</span><div class="tl-event">進入遺址，開始<strong>路線二｜經典路線</strong><div class="tl-note">導遊講解約 2 小時，重點：太陽神殿、神聖廣場、皇家寢宮</div></div></li>
-        <li><span class="tl-time">16:00</span><div class="tl-event">自由攝影時間（光線最美的黃金時段）</div></li>
-        <li><span class="tl-time">16:30</span><div class="tl-event">🚌 搭巴士下山</div></li>
-        <li><span class="tl-time">17:30</span><div class="tl-event">回鎮上逛街、泡溫泉<div class="tl-note">阿瓜斯卡連特斯有天然溫泉，約 $15/人，推薦傍晚去</div></div></li>
-        <li><span class="tl-time">19:30</span><div class="tl-event">🍽 晚餐（自理）</div></li>
-        <li><span class="tl-time">21:00</span><div class="tl-event">早點休息，明天 05:00 要起床</div></li>
-      </ul>
-
-      <div class="day-label">Day 2 — 華納比丘 · 午餐 · 返回庫斯科</div>
-      <ul class="timeline">
-        <li><span class="tl-time">05:00</span><div class="tl-event">起床、早餐（飯店含）</div></li>
-        <li><span class="tl-time">05:15</span><div class="tl-event">步行前往巴士站排隊<div class="tl-note">高峰期隊伍很長，建議比首班早 15 分鐘到</div></div></li>
-        <li><span class="tl-time">05:30</span><div class="tl-event">🚌 搭第一班巴士上山</div></li>
-        <li><span class="tl-time">06:00</span><div class="tl-event">🏔 進入遺址，直奔<strong>華納比丘第一梯次</strong>入口<div class="tl-note">路線三門票，6 人提前 2–3 個月訂好，帶紙本或手機票</div></div></li>
-        <li><span class="tl-time">09:30</span><div class="tl-event">完成華納比丘下山，在遺址自由活動<div class="tl-note">可走路線二剩下沒拍到的角度，或就坐著欣賞雲霧繚繞的景色</div></div></li>
-        <li><span class="tl-time">10:30</span><div class="tl-event">🚌 搭巴士下山回鎮上</div></li>
-        <li><span class="tl-time">11:00</span><div class="tl-event">購物紀念品（鎮上有秘魯羊駝毛製品）</div></li>
-        <li><span class="tl-time">12:00</span><div class="tl-event">🍽 午餐（鎮上自理）</div></li>
-        <li><span class="tl-time">14:00</span><div class="tl-event">🚂 搭火車返回歐雅亞坦坦博<div class="tl-note">建議回程升級 Vistadome +$65/人，沿途景色最美</div></div></li>
-        <li><span class="tl-time">15:30</span><div class="tl-event">抵達歐雅亞坦坦博，搭廂型車回庫斯科</div></li>
-        <li><span class="tl-time">17:30</span><div class="tl-event">🏠 抵達庫斯科，行程完成</div></li>
-      </ul>
-
-      <div class="plan-summary">
-        <strong>費用估算（6 人）：</strong>Yapa 2-day 火車套餐 ≈$1,914 + 華納比丘 6×$65=$390 + 回程火車升級 6×$65=$390 + 餐費等 ≈ <strong>合計約 $2,700–3,000 USD</strong>（不含住宿，住宿約另需 $720–1,200 USD 含稅）
-      </div>
-    </div>
-  </div>
-
-  <!-- ── 方案 B ── -->
-  <div>
-    <div class="plan-header" style="background: linear-gradient(90deg, #0a2a40, #1a5276);">
-      <h3>方案 B｜深度雙路線版（體力充足者）</h3>
-      <div class="subtitle">第 1 天多走一個角度 · 第 2 天含路線三完整版 · 最大化遊覽深度</div>
-    </div>
-    <div class="plan-body">
-
-      <div class="day-label">Day 1 — 提早出發，第一天走路線一 + 路線二</div>
-      <ul class="timeline">
-        <li><span class="tl-time">06:30</span><div class="tl-event">廂型車從庫斯科出發（比方案 A 早 30 分鐘）</div></li>
-        <li><span class="tl-time">09:00</span><div class="tl-event">抵達歐雅亞坦坦博，搭 09:00 火車</div></li>
-        <li><span class="tl-time">10:30</span><div class="tl-event">抵達阿瓜斯卡連特斯，放行李、快速用餐</div></li>
-        <li><span class="tl-time">11:30</span><div class="tl-event">🚌 巴士上山</div></li>
-        <li><span class="tl-time">12:00</span><div class="tl-event">🏔 進遺址，先走<strong>路線一</strong>（上層觀景台 + 馬丘比丘山方向）<div class="tl-note">適合攝影，可拍到整個遺址全景</div></div></li>
-        <li><span class="tl-time">14:30</span><div class="tl-event">換票走<strong>路線二</strong>（經典路線，導遊帶路）<div class="tl-note">需預先購買兩種路線票</div></div></li>
-        <li><span class="tl-time">17:00</span><div class="tl-event">🚌 下山，晚餐、休息</div></li>
-      </ul>
-
-      <div class="day-label">Day 2 — 華納比丘 + 路線三完整探索</div>
-      <ul class="timeline">
-        <li><span class="tl-time">05:00</span><div class="tl-event">起床出發，搶首班巴士</div></li>
-        <li><span class="tl-time">06:00</span><div class="tl-event">🏔 <strong>華納比丘第一梯次</strong>（3.5 小時）</div></li>
-        <li><span class="tl-time">09:30</span><div class="tl-event">走<strong>路線三</strong>下層廢墟 + 農業梯田<div class="tl-note">此時遊客漸多，但山頂剛下來心情最好</div></div></li>
-        <li><span class="tl-time">11:00</span><div class="tl-event">🚌 下山，午餐</div></li>
-        <li><span class="tl-time">13:00</span><div class="tl-event">最後購物、整理行李</div></li>
-        <li><span class="tl-time">15:00</span><div class="tl-event">🚂 搭火車返回（Vistadome 觀景艙）</div></li>
-        <li><span class="tl-time">18:30</span><div class="tl-event">🏠 抵達庫斯科</div></li>
-      </ul>
-
-      <div class="plan-summary">
-        <strong>適合：</strong>體力好、喜歡拍照、希望把馬丘比丘走得最透徹的旅人。<br>
-        <strong>注意：</strong>需額外購買路線一門票，費用略高；第 1 天行程較緊湊。
-      </div>
-    </div>
-  </div>
-
-  <!-- ── 方案 C ── -->
-  <div>
-    <div class="plan-header" style="background: linear-gradient(90deg, #4a1a00, #873600);">
-      <h3>方案 C｜高海拔緩適版（高山症風險者適用）</h3>
-      <div class="subtitle">庫斯科多待一晚適應 · 第 1 天輕鬆抵達 · 不趕時間 · 健康優先</div>
-    </div>
-    <div class="plan-body">
-
-      <div class="warning">
-        <strong>⚠ 高山症提醒：</strong>庫斯科海拔 3,400 米，阿瓜斯卡連特斯 2,040 米（反而低一點），馬丘比丘 2,430 米。若剛到庫斯科感覺不適，強烈建議先休息 1–2 天再出發。
+      <!-- 9/9 聖谷 D2 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--sacred)" href="#sacred">
+            <span class="tl-month">9月</span><span class="tl-day-num">9</span><span class="tl-wd">二</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--sacred)">聖谷 · D2</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-activity"><span class="tl-time">上午</span><span>🏯 奧蘭泰坦博要塞（早去人少、光線最美）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🧂 馬拉斯鹽田 + 莫雷梯田（可選，約半天）</span></div>
+            <div class="tl-slot tl-note"><span class="tl-time">晚上</span><span>🚂 奧蘭泰坦博備戰明日火車，早點就寢</span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="day-label">Day 0（可選）— 在庫斯科適應高海拔</div>
-      <ul class="timeline">
-        <li><span class="tl-time">全天</span><div class="tl-event">在庫斯科市區輕鬆逛，避免劇烈運動<div class="tl-note">多喝古柯葉茶（免費）、補水、早睡。如有嚴重頭痛，可詢問藥局購買 Diamox</div></div></li>
-      </ul>
+      <!-- 9/10 馬丘比丘 D1 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--machu)" href="#machu">
+            <span class="tl-month">9月</span><span class="tl-day-num">10</span><span class="tl-wd">三</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--machu)">馬丘比丘 · D1</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-train"><span class="tl-time">~10:00</span><span>🚂 Vistadome 觀景火車：奧蘭泰坦博 → 熱水鎮，約 1.5 小時<span class="tl-pending">依訂票</span></span></div>
+            <div class="tl-slot tl-bus"><span class="tl-time">11:30</span><span>🚌 Consettur 接駁巴士上山，25 分鐘</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🏔 馬丘比丘 Circuit 2 全線探索（約 2–3 小時）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">傍晚</span><span>🚌 巴士下山，回熱水鎮晚餐</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">晚上</span><span>♨️ 溫泉浴場泡腳放鬆（可選）</span></div>
+          </div>
+        </div>
+      </div>
 
-      <div class="day-label">Day 1 — 輕鬆出發，下午短暫參觀</div>
-      <ul class="timeline">
-        <li><span class="tl-time">08:00</span><div class="tl-event">廂型車出發（較晚，不趕）</div></li>
-        <li><span class="tl-time">10:00</span><div class="tl-event">歐雅亞坦坦博搭 10:30 火車</div></li>
-        <li><span class="tl-time">12:00</span><div class="tl-event">抵達阿瓜斯卡連特斯，豐盛午餐、rest</div></li>
-        <li><span class="tl-time">14:00</span><div class="tl-event">🚌 上山，走<strong>路線二</strong>（2.5 小時，由導遊帶領）</div></li>
-        <li><span class="tl-time">17:00</span><div class="tl-event">🚌 下山，泡溫泉放鬆，早睡</div></li>
-      </ul>
+      <!-- 9/11 馬丘比丘 D2 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--machu)" href="#machu">
+            <span class="tl-month">9月</span><span class="tl-day-num">11</span><span class="tl-wd">四</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--machu)">馬丘比丘 · D2</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-activity"><span class="tl-time">07:00</span><span>⛰ 華納比丘攀登（體力好者）／長輩繼續探索主遺址</span></div>
+            <div class="tl-slot tl-train"><span class="tl-time">~14:00</span><span>🚂 火車返回：熱水鎮 → 奧蘭泰坦博<span class="tl-pending">依訂票</span></span></div>
+            <div class="tl-slot tl-bus"><span class="tl-time">16:00</span><span>🚐 私人接送廂型車：奧蘭泰坦博 → 庫斯科，約 1.5 小時</span></div>
+            <div class="tl-slot tl-note"><span class="tl-time">晚上</span><span>🏨 抵達庫斯科，早點休息</span></div>
+          </div>
+        </div>
+      </div>
 
-      <div class="day-label">Day 2 — 從容早起，華納比丘第二梯次</div>
-      <ul class="timeline">
-        <li><span class="tl-time">05:30</span><div class="tl-event">起床（比方案 A/B 晚 30 分鐘），早餐後出發</div></li>
-        <li><span class="tl-time">06:30</span><div class="tl-event">🚌 巴士上山</div></li>
-        <li><span class="tl-time">07:00</span><div class="tl-event">🏔 <strong>華納比丘第二梯次</strong>（07:00 入口）<div class="tl-note">比第一梯次稍微不擠，適合體力稍保守的旅人，同樣 3.5 小時</div></div></li>
-        <li><span class="tl-time">10:30</span><div class="tl-event">完成下山，遺址自由活動</div></li>
-        <li><span class="tl-time">11:30</span><div class="tl-event">🚌 下山回鎮上</div></li>
-        <li><span class="tl-time">12:00</span><div class="tl-event">🍽 悠閒午餐</div></li>
-        <li><span class="tl-time">14:30</span><div class="tl-event">🚂 搭火車返回（Vistadome）</div></li>
-        <li><span class="tl-time">18:30</span><div class="tl-event">🏠 抵達庫斯科，輕鬆結束</div></li>
-      </ul>
+      <!-- 9/12 庫斯科 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--cusco)" href="#cusco">
+            <span class="tl-month">9月</span><span class="tl-day-num">12</span><span class="tl-wd">五</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--cusco)">庫斯科</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-activity"><span class="tl-time">上午</span><span>🪨 薩克薩瓦曼巨石城牆（8am 到，光線最佳人最少）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">上午</span><span>☀️ 太陽宮殿 Qorikancha（步行可達）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>⛩ 四方廣場漫步 &amp; 聖布拉斯手工藝坡道</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">晚上</span><span>🦙 烤天竺鼠（Cuy）文化晚餐體驗</span></div>
+          </div>
+        </div>
+      </div>
 
-      <div class="plan-summary">
-        <strong>適合：</strong>第一次到高海拔地區、有輕微高山症擔憂、或偏好不趕時間的旅人。<br>
-        <strong>優勢：</strong>華納比丘第二梯次（07:00）仍能在日出後的清晨光線中攀頂，且稍微不那麼擁擠。
+      <!-- 9/13 轉機日 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:#8a7260" href="#iquitos">
+            <span class="tl-month">9月</span><span class="tl-day-num">13</span><span class="tl-wd">六</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:#8a7260">轉機日</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-flight"><span class="tl-time">07–09</span><span>✈️ 庫斯科（CUZ）→ 利馬（LIM），約 1 小時<span class="tl-pending">待確認</span></span></div>
+            <div class="tl-slot tl-note"><span class="tl-time"></span><span>⏳ 利馬轉機：至少保留 3 小時緩衝，行李可能無法直掛</span></div>
+            <div class="tl-slot tl-flight"><span class="tl-time">下午</span><span>✈️ 利馬（LIM）→ 伊基托斯（IQT），約 2 小時<span class="tl-pending">待確認</span></span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">傍晚</span><span>🌿 抵達後往叢林小屋或市區飯店 check-in</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9/14 伊基托斯 D1 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--iquitos)" href="#iquitos">
+            <span class="tl-month">9月</span><span class="tl-day-num">14</span><span class="tl-wd">日</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--iquitos)">伊基托斯 · 叢林 D1</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-activity"><span class="tl-time">上午</span><span>🌿 亞馬遜叢林健行（長輩 30 分鐘版 ／ 年輕成員 2 小時深入版）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🐬 粉紅淡水豚觀察（Boto）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">晚上</span><span>🐊 夜間凱門鱷尋蹤（小船 + 手電筒）</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9/15 伊基托斯 D2 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--iquitos)" href="#iquitos">
+            <span class="tl-month">9月</span><span class="tl-day-num">15</span><span class="tl-wd">一</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--iquitos)">伊基托斯 · 叢林 D2</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-activity"><span class="tl-time">上午</span><span>🌸 巨型維多利亞睡蓮觀賞（直徑可達 3 公尺）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🏘 原住民村落文化參訪（Yagua 族，吹箭體驗）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🎣 釣食人魚（可選，驚悚但安全）</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9/16 伊基托斯 D3 市區 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:var(--iquitos)" href="#iquitos">
+            <span class="tl-month">9月</span><span class="tl-day-num">16</span><span class="tl-wd">二</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:var(--iquitos)">伊基托斯 · 市區 D3</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-boat"><span class="tl-time">上午</span><span>🚤 乘船返回伊基托斯市區</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🛶 貝倫浮水市場（建議跟導遊前往）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🏠 Casa de Hierro（艾菲爾設計鐵屋）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">晚上</span><span>🍽 市區道地亞馬遜料理晚餐</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9/17 伊基托斯→利馬 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:#8a7260" href="#iquitos">
+            <span class="tl-month">9月</span><span class="tl-day-num">17</span><span class="tl-wd">三</span>
+          </a>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:#8a7260">伊基托斯 → 利馬</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-flight"><span class="tl-time">早班</span><span>✈️ 伊基托斯（IQT）→ 利馬（LIM），約 2 小時<span class="tl-pending">待確認</span></span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">下午</span><span>🏙 利馬米拉弗洛雷斯購物或 Huaca Pucllana 夜遊（可選）</span></div>
+            <div class="tl-slot tl-activity"><span class="tl-time">晚上</span><span>🍽 利馬最後晚餐（推薦預訂：Central、Maido 或 Astrid y Gastón）</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9/18 返程 -->
+      <div class="tl-day">
+        <div class="tl-date-col">
+          <a class="tl-date-bubble" style="background:#8a7260" href="#tips">
+            <span class="tl-month">9月</span><span class="tl-day-num">18</span><span class="tl-wd">四</span>
+          </a>
+          <!-- 最後一天不加 tl-line -->
+        </div>
+        <div class="tl-content">
+          <span class="tl-city-label" style="background:#8a7260">返程回台</span>
+          <div class="tl-slots">
+            <div class="tl-slot tl-flight"><span class="tl-time">13:30</span><span>✈️ 新加坡組：利馬出發（LA2694 → 邁阿密 → 杜拜 → 新加坡，9/20 抵達）</span></div>
+            <div class="tl-slot tl-flight"><span class="tl-time">凌晨 00:05</span><span>✈️ 台北組：利馬出發（KE7288 → 亞特蘭大 → 首爾 → 桃園，9/20 抵達）</span></div>
+            <div class="tl-slot tl-note"><span class="tl-time"></span><span>🎉 秘魯 13 天家庭旅遊圓滿結束，期待重逢！</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────── -->
+  <!-- LIMA -->
+  <!-- ──────────────────────────────────────── -->
+  <section class="city-section" id="lima">
+    <div class="city-banner lima">
+      <div>
+        <h2>利馬</h2>
+        <div class="foreign">Lima · 海拔 0m · 南美美食之都</div>
+      </div>
+      <div class="city-badges">
+        <span class="badge">📅 9/6–7</span>
+        <span class="badge">⏱ 2天</span>
+        <span class="badge">🌊 海平面，不用擔心高原</span>
       </div>
     </div>
-  </div>
 
-</section>
+    <div class="city-body">
 
+      <p class="city-intro">南美洲最大太平洋沿岸都市，融合印加遺跡與西班牙殖民風情。海拔 0m，無高原反應顧慮，是全程第一站最好的緩衝。利馬同時是全球 50 大最佳餐廳最密集的城市之一，美食旅行者的天堂，建議帶著空肚子出門。</p>
 
-<!-- ══════════════════════════════════
-     SECTION 7 — 訂票攻略 & 注意事項
-════════════════════════════════════ -->
-<section>
-  <h2>七、DIY 訂票步驟 & 注意事項</h2>
-  <div class="card-grid">
-    <div class="card">
-      <h3>📋 建議訂票順序</h3>
-      <ul class="info-list">
-        <li><strong>第 1 步</strong>｜先到 <a href="https://tuboleto.cultura.pe/" target="_blank" style="color:#2d6a4f;">tuboleto.cultura.pe</a> 查詢 9 月目標日期的<strong>華納比丘名額</strong>是否仍有空位</li>
-        <li><strong>第 2 步</strong>｜確認後立即購買<strong>入場票（路線二 + 路線三）</strong>及<strong>華納比丘加購票</strong>——官方最便宜；若語言是障礙可改用 GetYourGuide</li>
-        <li><strong>第 3 步</strong>｜購買<strong>火車票</strong>：去程 Expedition，回程可選 Vistadome（<a href="https://www.perurail.com" target="_blank" style="color:#2d6a4f;">perurail.com</a> 或 <a href="https://www.incarail.com" target="_blank" style="color:#2d6a4f;">incarail.com</a>）</li>
-        <li><strong>第 4 步</strong>｜預訂<strong>廂型車接駁</strong>（庫斯科 → 歐雅亞坦坦博），可請飯店協助安排</li>
-        <li><strong>第 5 步</strong>｜預訂<strong>阿瓜斯卡連特斯住宿</strong>（建議選距巴士站近的飯店）</li>
-        <li><strong>第 6 步</strong>｜視需求預約<strong>私人導遊</strong>（線上或抵達後現場洽談）</li>
-        <li><strong>第 7 步</strong>｜購買旅遊保險（含高山醫療與行程取消保障）</li>
-        <li><strong>第 8 步</strong>｜確認護照有效期至少 6 個月以上</li>
-      </ul>
+      <div class="cat-group">
+        <span class="cat-label classic">⭐ 經典必去</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">🏛️</div>
+            <div class="activity-content">
+              <h4>拉爾科博物館 <span class="foreign">Museo Larco</span></h4>
+              <p>秘魯最重要的私人考古博物館，收藏超過45,000件印加黃金器、彩陶與織品，設有知名的「情色陶器館」（18+）。下午可在玫瑰花園享用館內咖啡。需時1.5–3小時。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.museolarco.org/en/" target="_blank">🌐 官方網站</a>
+                <a class="ref-chip" href="https://www.tripadvisor.com/Attraction_Review-g294316-d311651-Reviews-Museo_Larco-Lima_Lima_Region.html" target="_blank">⭐ TripAdvisor 評價</a>
+                <a class="ref-chip" href="https://www.lonelyplanet.com/articles/top-things-to-do-in-lima" target="_blank">📖 Lonely Planet</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🎨</div>
+            <div class="activity-content">
+              <h4>巴蘭科藝術區 <span class="foreign">Barranco</span></h4>
+              <p>利馬最浪漫的街區，彩色維多利亞式建築、嘆息橋（Puente de los Suspiros）、街頭塗鴉藝術與文青咖啡館。傍晚前往感受最佳氛圍。可搭配購買秘魯工藝品。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://thebetterbeyond.com/best-things-to-do-in-barranco-lima-peru/" target="_blank">📖 The Better Beyond 攻略</a>
+                <a class="ref-chip" href="https://www.machutravelperu.com/blog/barranco-lima" target="_blank">📖 Machu Travel Peru</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🌊</div>
+            <div class="activity-content">
+              <h4>米拉弗洛雷斯懸崖公園 <span class="foreign">Parque del Amor</span></h4>
+              <p>太平洋沿岸懸崖公園，欣賞夕陽與海景。附近可散步至商店街或享用 Ceviche。夜間懸崖燈光迷人，是拍照打卡熱點。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.tripadvisor.com/Attractions-g294316-Activities-Lima_Lima_Region.html" target="_blank">⭐ TripAdvisor 利馬景點</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🍽️</div>
+            <div class="activity-content">
+              <h4>秘魯美食體驗</h4>
+              <p>利馬是全球50大最佳餐廳最密集的城市之一。必嚐：<strong>Ceviche</strong>（檸檬醃生魚）、<strong>Lomo Saltado</strong>（炒牛肉）、<strong>Pisco Sour</strong>（皮斯科雞尾酒）、<strong>Anticuchos</strong>（烤牛心串燒）。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.lonelyplanet.com/articles/top-things-to-do-in-lima" target="_blank">📖 Lonely Planet 利馬</a>
+                <a class="ref-chip" href="https://dragonflytravelblog.com/peru-lima-travel/" target="_blank">✈️ 蜻蜓遊記</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+
+      <div class="cat-group">
+        <span class="cat-label optional">＋ 彈性可選</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">⛪</div>
+            <div class="activity-content">
+              <h4>利馬歷史中心 <span class="foreign">Centro Histórico</span></h4>
+              <p>UNESCO 世界遺產。聖馬丁廣場、總統府換崗儀式、聖法蘭西斯科修道院地下墓穴（catacomb，約70,000具骸骨）。建議早上前往，下午人多。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://kavana.tw/lima/" target="_blank">✈️ 卡瓦納@京都遊記</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🛒</div>
+            <div class="activity-content">
+              <h4>中央市場 <span class="foreign">Mercado Central</span></h4>
+              <p>在地人的廚房，販售各式新鮮食材、異國香料、熱帶水果與庶民小吃。適合早上前往，體驗真實的利馬日常生活。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://dragonflytravelblog.com/peru-lima-travel/" target="_blank">✈️ 蜻蜓旅遊日誌</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🏺</div>
+            <div class="activity-content">
+              <h4>瓦卡普卡亞考古遺址 <span class="foreign">Huaca Pucllana</span></h4>
+              <p>城市中心的古代泥磚金字塔，西元五世紀Lima文化建造，夜間燈光版尤為壯觀（推薦夜遊）。步行可至。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.lonelyplanet.com/articles/top-things-to-do-in-lima" target="_blank">📖 Lonely Planet</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label food">🍽 美食特產</span>
+        <div class="food-grid">
+          <div class="food-item">
+            <div class="food-item-name">Ceviche</div>
+            <div class="food-item-foreign">生魚片</div>
+            <div class="food-item-desc">秘魯國民美食，檸檬汁醃漬生魚搭配洋蔥香菜，鮮酸開胃，任何餐廳必點，是最能代表利馬的一道料理。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Ceviche" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/ceviche" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Lomo Saltado</div>
+            <div class="food-item-foreign">炒牛肉</div>
+            <div class="food-item-desc">中式拌炒技法融入秘魯食材，牛肉、番茄、洋蔥與薯條同炒，是「中秘融合料理」Chifa 的代表作。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Lomo_saltado" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/lomo-saltado" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Causa Limeña</div>
+            <div class="food-item-foreign">黃馬鈴薯泥塔</div>
+            <div class="food-item-desc">黃馬鈴薯泥夾層，內餡可選雞肉或酪梨，口感細膩滑順，是利馬傳統前菜。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Causa_(food)" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/causa-rellena" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Anticuchos</div>
+            <div class="food-item-foreign">烤牛心串</div>
+            <div class="food-item-desc">醃漬牛心炭烤串燒，佐花生辣醬，街頭小吃攤必點，滋味濃郁不騷。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Anticuchos" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/anticucho" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Pisco Sour</div>
+            <div class="food-item-foreign">皮斯科酸酒</div>
+            <div class="food-item-desc">秘魯國民調酒，Pisco 白蘭地 + 萊姆汁 + 蛋白 + 苦精，酸甜清爽，到秘魯必喝一杯。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Pisco_sour" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/pisco-sour" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Leche de tigre</div>
+            <div class="food-item-foreign">虎奶</div>
+            <div class="food-item-desc">Ceviche 的醃漬柑橘汁直接當小杯喝，極度提神開胃，海鮮鮮味與酸香交融，勇者必試。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Leche_de_tigre" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/leche-de-tigre" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label lodging">🏨 住宿區域建議</span>
+        <div class="lodging-list">
+          <div class="lodging-area">
+            <div class="lodging-area-name">米拉弗洛雷斯 Miraflores <span class="lodging-badge">首選</span></div>
+            <div class="lodging-desc">全利馬最安全、餐廳最密集、步行可達懸崖公園，距機場約 30 分鐘。觀光客聚集，英文溝通順暢，強烈推薦。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=Miraflores%20Lima%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+          <div class="lodging-area">
+            <div class="lodging-area-name">巴蘭科 Barranco</div>
+            <div class="lodging-desc">文青藝術精品飯店，浪漫氛圍，適合行動方便者。距主要景點需搭車或 Uber，比米拉弗洛雷斯稍遠。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=Barranco%20Lima%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label cnotes">⚠️ 注意事項</span>
+        <ul class="city-notes-list">
+          <li>夜間避免帶貴重物品外出，米拉弗洛雷斯相對安全但仍需保持警覺</li>
+          <li>搭 Uber 而非路邊招攬計程車，假計程車詐騙時有所聞</li>
+          <li>利馬晚餐高峰在 8pm 後，餐廳早去人很少，建議配合當地節奏</li>
+          <li>博物館早上人少且涼爽，建議 9am 前出發；下午光線較強且人多</li>
+        </ul>
+      </div>
+
+      <div class="transport-box">
+        <strong>✈️ 下一段交通</strong>
+        利馬（LIM）→ 庫斯科（CUZ）：LATAM / Sky Airlines 國內班機，約 1 小時。建議搭 7–9am 早班機，下機後直接接送前往聖谷，避免在庫斯科（3,400m）高地停留過久。
+      </div>
+
     </div>
-    <div class="card">
-      <h3>🎒 實用小提醒</h3>
-      <ul class="info-list">
-        <li>遺址內<strong>不可帶三腳架</strong>（手持相機可以）</li>
-        <li>背包限 20L 以下，大行李需寄存</li>
-        <li>禁止帶入食物，飲水可以</li>
-        <li>無人機全面禁止</li>
-        <li>穿防雨外套，9 月可能短暫陣雨</li>
-        <li>建議穿登山鞋，石板路面濕滑</li>
-        <li>遺址內無 WiFi，出發前下載 Maps.me 離線地圖</li>
-        <li>備好現金索爾（PEN），鎮上部分小店不收信用卡</li>
-        <li>山腳巴士可現場購票，無需提前訂</li>
-      </ul>
+  </section>
+
+  <!-- ──────────────────────────────────────── -->
+  <!-- SACRED VALLEY -->
+  <!-- ──────────────────────────────────────── -->
+  <section class="city-section" id="sacred">
+    <div class="city-banner sacred">
+      <div>
+        <h2>印加聖谷</h2>
+        <div class="foreign">Valle Sagrado · 海拔 2,400–2,800m · 高原緩衝區</div>
+      </div>
+      <div class="city-badges">
+        <span class="badge">📅 9/8–9</span>
+        <span class="badge">⏱ 2天</span>
+        <span class="badge">🫁 先適應此高度再上庫斯科</span>
+      </div>
     </div>
-  </div>
 
-  <div class="warning">
-    <strong>⚠ 9 月旺季提醒：</strong>9 月是馬丘比丘乾季尾、天氣最好的月份，遊客量大。華納比丘每天僅 400 個名額，6 人要在同一梯次入場需提早確認。建議先到官方或 GetYourGuide 查詢實際餘額，再決定訂購平台。
-  </div>
-</section>
+    <div class="city-body">
 
-</div><!-- /container -->
+      <p class="city-intro">烏魯班巴河谷蜿蜒穿越安地斯山脈，海拔 2,400–2,800m，是前往馬丘比丘的必經高原緩衝區。印加帝國在此建立最密集的農業梯田、要塞與集市，遺跡保存比庫斯科市更完整。<strong>在此兩天是高原適應的關鍵，請認真對待。</strong></p>
 
-<footer>
-  <p>資料來源：<a href="https://tuboleto.cultura.pe" target="_blank">秘魯文化部官方售票</a> · <a href="https://www.perurail.com" target="_blank">Peru Rail</a> · <a href="https://www.incarail.com" target="_blank">Inca Rail</a> · <a href="https://www.getyourguide.com/machu-picchu-l1570/entry-tickets-tc123/" target="_blank">GetYourGuide</a> · <a href="https://www.viator.com/Cusco-attractions/Machu-Picchu/d937-a3358" target="_blank">Viator</a></p>
-  <p style="margin-top:8px;opacity:0.6;">本指南整理於 2026 年 5 月，價格與時刻表以實際訂票時為準</p>
-</footer>
+      <div class="cat-group">
+        <span class="cat-label classic">⭐ 經典必去</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">🛍️</div>
+            <div class="activity-content">
+              <h4>畢薩克傳統市集 <span class="foreign">Pisac Market</span></h4>
+              <p>安地斯山最著名的傳統市集，每週日最為熱鬧（開市6am）。攤位販售手工染色羊駝毛織品、銀飾、陶器、彩色玉米。部落婦女穿傳統服飾現場示範編織。長輩全程平地，非常舒適。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://machupicchusoul.com/blog/pisac-market/" target="_blank">📖 Machu Picchu Soul 攻略</a>
+                <a class="ref-chip" href="https://www.ticketmachupicchu.com/market-pisac-sacred-valley/" target="_blank">📖 Ticket MP 官方導覽</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🏯</div>
+            <div class="activity-content">
+              <h4>奧蘭泰坦博要塞 <span class="foreign">Ollantaytambo Fortress</span></h4>
+              <p>秘魯保存最完整的印加軍事要塞，6組平行農業梯田直衝山壁。此地也是搭火車前往馬丘比丘的出發站。長輩可在廣場休息觀看，年輕成員爬頂端制高點享受全景。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.machutravelperu.com/blog/ollantaytambo" target="_blank">📖 Machu Travel Peru 完整指南</a>
+                <a class="ref-chip" href="https://www.ticketmachupicchu.com/ruins-ollantaytambo-sacred-valley-incas/" target="_blank">📖 官方景點導覽</a>
+                <a class="ref-chip" href="https://whereissasa.com/sacred-valley/" target="_blank">✈️ 莎去哪了 遊記</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🍵</div>
+            <div class="activity-content">
+              <h4>古柯葉茶 <span class="foreign">Coca Tea</span></h4>
+              <p>高原適應必備，各大飯店免費供應。古柯葉含天然鹼基，協助身體在低氧環境下調節。抵達聖谷當日建議多喝、少動、早睡，避免飲酒。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://straycat2730.pixnet.net/blog/post/351795913" target="_blank">✈️ 流浪貓筆記本 聖谷遊記</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+
+      <div class="cat-group">
+        <span class="cat-label optional">＋ 彈性可選</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">🧂</div>
+            <div class="activity-content">
+              <h4>馬拉斯鹽田 <span class="foreign">Maras Salt Mines</span></h4>
+              <p>超過 6,000 個粉紅色小鹽池階梯狀鑲嵌山壁，千年印加採鹽遺跡。從地下泉湧出高鹽度溫水自然蒸發成鹽。門票僅 10 索爾（約 USD 3），攝影絕景。距聖谷約30分鐘車程。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.machutravelperu.com/blog/maras-salt-mines" target="_blank">📖 Machu Travel Peru</a>
+                <a class="ref-chip" href="https://www.ticketmachupicchu.com/salineras-maras/" target="_blank">📖 官方導覽 &amp; 門票</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🔵</div>
+            <div class="activity-content">
+              <h4>莫雷圓形農業梯田 <span class="foreign">Moray Terraces</span></h4>
+              <p>同心圓形下沉式梯田，深達30公尺，每層溫差可達15°C，推測為印加農業實驗站（模擬不同海拔種植條件）。形似外星降落痕跡，視覺極具衝擊。鄰近鹽田，可同日前往。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://whereissasa.com/sacred-valley/" target="_blank">✈️ 莎去哪了 遊記（含莫雷）</a>
+                <a class="ref-chip" href="https://straycat2730.pixnet.net/blog/post/351795913" target="_blank">✈️ 流浪貓筆記本</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🍖</div>
+            <div class="activity-content">
+              <h4>帕查曼卡大地料理 <span class="foreign">Pachamanca</span></h4>
+              <p>印加傳統烹飪法：將加熱石頭埋入地下，覆蓋食材（馬鈴薯、玉米、羊肉、天竺鼠）悶烤數小時，原汁原味。部分餐廳或農莊可預訂此體驗。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://straycat2730.pixnet.net/blog/post/351795913" target="_blank">✈️ 流浪貓筆記本 聖谷遊記</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label food">🍽 美食特產</span>
+        <div class="food-grid">
+          <div class="food-item">
+            <div class="food-item-name">Choclo con queso</div>
+            <div class="food-item-foreign">安地斯玉米</div>
+            <div class="food-item-desc">安地斯大粒玉米搭配新鮮白起司，簡單卻令人難忘，在市集與路邊攤均有販售。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Choclo" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/choclo-con-queso" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Chicha morada</div>
+            <div class="food-item-foreign">紫玉米汁</div>
+            <div class="food-item-desc">紫玉米加香料熬煮的甜飲，無酒精，色澤深紫，是安地斯地區獨有的解渴飲品。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Chicha_morada" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/chicha-morada" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Trucha</div>
+            <div class="food-item-foreign">虹鱒料理</div>
+            <div class="food-item-desc">來自安地斯溪流的新鮮虹鱒，炸或烤皆美，聖谷任何餐廳幾乎必備，鮮嫩可口。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Rainbow_trout" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/trucha-frita" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Cuy al horno</div>
+            <div class="food-item-foreign">烤天竺鼠</div>
+            <div class="food-item-desc">安地斯傳統蛋白質來源，肉質類似兔肉，在地餐廳可嚐，是道地的印加風味體驗。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Guinea_pig#As_food" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/cuy" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label lodging">🏨 住宿區域建議</span>
+        <div class="lodging-list">
+          <div class="lodging-area">
+            <div class="lodging-area-name">奧蘭泰坦博 Ollantaytambo <span class="lodging-badge">推薦</span></div>
+            <div class="lodging-desc">位於印加遺址內的活古鎮，火車站步行可達，9/10 早上直接步行上車，不用趕車。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=Ollantaytambo%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+          <div class="lodging-area">
+            <div class="lodging-area-name">烏魯班巴 Urubamba</div>
+            <div class="lodging-desc">聖谷地理中心，前往鹽田、莫雷、畢薩克均方便，中高檔飯店選擇最多。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=Urubamba%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+          <div class="lodging-area">
+            <div class="lodging-area-name">畢薩克 Pisac</div>
+            <div class="lodging-desc">若第一天重點在市集，住畢薩克可就近體驗，但 9/10 須提早出發至奧蘭泰坦博搭車。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=Pisac%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label cnotes">⚠️ 注意事項</span>
+        <ul class="city-notes-list">
+          <li>高原反應初始症狀（頭痛、噁心、易喘）屬正常現象，不要驚慌，放慢步調即可</li>
+          <li>抵達當天只做輕度活動，禁酒，每天喝 2 公升以上的水與古柯葉茶</li>
+          <li>Diamox（乙醯唑胺）建議在抵達高地前一天開始服用，請先諮詢醫師</li>
+          <li>夜間氣溫可降至 5–8°C，務必備保暖外套，日夜溫差大</li>
+        </ul>
+      </div>
+
+      <div class="transport-box">
+        <strong>🚂 下一段交通</strong>
+        奧蘭泰坦博 → 阿瓜斯卡連特斯（熱水鎮）：Inca Rail 或 Peru Rail Vistadome 觀景火車，約 1.5 小時。玻璃天窗欣賞安地斯山峽谷。建議搭乘中午班次，下午可抵達後直接遊覽馬丘比丘。
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────── -->
+  <!-- MACHU PICCHU -->
+  <!-- ──────────────────────────────────────── -->
+  <section class="city-section" id="machu">
+    <div class="city-banner machu">
+      <div>
+        <h2>馬丘比丘</h2>
+        <div class="foreign">Machu Picchu · 遺址 2,430m · 熱水鎮 2,000m</div>
+      </div>
+      <div class="city-badges">
+        <span class="badge">📅 9/10–11</span>
+        <span class="badge">⏱ 2天1夜</span>
+        <span class="badge">🎟 票需提前3個月訂！</span>
+      </div>
+    </div>
+
+    <div class="city-body">
+
+      <p class="city-intro">建於 15 世紀的印加天空之城，1983 年列入 UNESCO 世界遺產。遺址海拔 2,430m，所在的熱水鎮（Aguas Calientes）海拔 2,000m，比庫斯科還低，相對舒適。9 月乾季氣候最穩定，是全程最令人期待的高光時刻。</p>
+
+      <div class="ticket-alert">
+        <div class="alert-title">⚠️ 訂票注意事項（9月為旺季，極度搶手）</div>
+        <ul>
+          <li><strong>馬丘比丘入場票</strong>：指定時段制，網路購票 → <a href="https://www.machupicchu.gob.pe/online-tickets/?lang=en" target="_blank">machupicchu.gob.pe</a>｜參考攻略：<a href="https://bobotravel.tw/blog/post/machu-picchu-circuits" target="_blank">寶兒遊樂園 2025版</a>、<a href="https://seekret-travel.com/en/3372/" target="_blank">Seekret Travel</a></li>
+          <li><strong>華納比丘</strong> <span class="priority-badge high">最難搶</span>：每天僅 400 名額（7–8am / 10–11am 兩時段各 200 人），需另購，建議提前 3–4 個月</li>
+          <li><strong>Inca Rail 觀景火車</strong>：<a href="https://incarail.com/en" target="_blank">incarail.com</a> 購票｜<strong>Peru Rail</strong>：<a href="https://www.perurail.com/" target="_blank">perurail.com</a></li>
+          <li><strong>詳細購票圖文教學</strong>：<a href="https://clairelin.tw/post-215940867/" target="_blank">Claire's Paradise（含 PeruRail 步驟）</a></li>
+        </ul>
+      </div>
+
+      <div class="cat-group" style="margin-top:20px">
+        <span class="cat-label classic">⭐ 經典必去</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">🏔️</div>
+            <div class="activity-content">
+              <h4>馬丘比丘 路線二 <span class="foreign">Circuit 2</span></h4>
+              <p>Day 1 下午：搭首班巴士上山後走 Circuit 2，涵蓋農業梯田、太陽神廟（Intihuatana 石）、主廣場、皇家宮殿、工業區與守望之屋。為最完整也最適合長輩的路線，全程坡度緩和。約需 2–3 小時。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.machupicchu.gob.pe/online-tickets/?lang=en" target="_blank">🎟 官方訂票</a>
+                <a class="ref-chip" href="https://bobotravel.tw/blog/post/machu-picchu-circuits" target="_blank">📖 路線比較攻略</a>
+                <a class="ref-chip" href="https://seekret-travel.com/en/3372/" target="_blank">📖 2025購票完整教學</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">⛰️</div>
+            <div class="activity-content">
+              <h4>華納比丘攀登 <span class="foreign">Huayna Picchu</span></h4>
+              <p>Day 2 早晨（體力好者）：馬丘比丘後方巨峰，海拔 2,720m，比主遺址高約 300m。陡峭石階加鐵鍊輔助攀爬，約 1.5–2 小時往返。從頂端鳥瞰馬丘比丘 U 形全景，是明信片上的視角。長輩在主遺址區慢遊等待。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.machutravelperu.com/blog/huayna-picchu" target="_blank">📖 攀登完整指南</a>
+                <a class="ref-chip" href="https://www.salkantaytrekking.com/blog/huayna-picchu-mountain-everything-you-need-to-know/" target="_blank">📖 Salkantay 安全須知</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🚂</div>
+            <div class="activity-content">
+              <h4>Vistadome 觀景火車 <span class="foreign">Scenic Train</span></h4>
+              <p>奧蘭泰坦博 → 熱水鎮，玻璃全景天窗欣賞安地斯峽谷、烏魯班巴河與雲霧森林。車程約 1.5 小時，是本次旅程最美的交通體驗之一。返程可選夜間班次。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://incarail.com/en" target="_blank">🎟 Inca Rail 訂票</a>
+                <a class="ref-chip" href="https://www.perurail.com/" target="_blank">🎟 Peru Rail 訂票</a>
+                <a class="ref-chip" href="https://clairelin.tw/post-215940867/" target="_blank">📖 詳細購票教學</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+
+      <div class="cat-group">
+        <span class="cat-label optional">＋ 彈性可選</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">🌅</div>
+            <div class="activity-content">
+              <h4>太陽門 <span class="foreign">Inti Punku</span></h4>
+              <p>從主遺址沿印加古道步行約 1.5 小時可達，是印加古道徒步客的正式終點。每天早晨日出時分可見陽光穿過石門照耀馬丘比丘全景。體力中上者適合。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://seekret-travel.com/en/3372/" target="_blank">📖 Seekret Travel 攻略</a>
+                <a class="ref-chip" href="https://bobotravel.tw/blog/post/machupicchu-preparation" target="_blank">📖 寶兒遊樂園準備攻略</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">♨️</div>
+            <div class="activity-content">
+              <h4>熱水鎮溫泉 <span class="foreign">Aguas Calientes Hot Springs</span></h4>
+              <p>海拔 2,000m 的小鎮有天然溫泉浴場，可舒緩腿部疲勞。鎮上主廣場熱鬧，餐廳、手工藝品攤林立。夜間返回熱水鎮後可享用豐盛晚餐再泡溫泉。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://bobotravel.tw/blog/post/machupicchu-preparation" target="_blank">📖 熱水鎮住宿 &amp; 餐廳攻略</a>
+                <a class="ref-chip" href="https://yaya.tw/machu-picchu-peru-travel/" target="_blank">✈️ 劈腿女孩 Yaya 遊記</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🏺</div>
+            <div class="activity-content">
+              <h4>馬丘比丘博物館 <span class="foreign">Museo de Sitio Manuel Chávez Ballón</span></h4>
+              <p>位於熱水鎮通往遺址巴士站的步道旁，展示遺址出土文物、地圖與考古史料，免費參觀。可在等待巴士或返回鎮上時順道參觀。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://justgotraveler.blog/2019/11/08/machu-picchu/" target="_blank">✈️ JustGo Traveler 完整攻略</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label food">🍽 美食特產（熱水鎮）</span>
+        <div class="food-grid">
+          <div class="food-item">
+            <div class="food-item-name">Alpaca steak</div>
+            <div class="food-item-foreign">羊駝排</div>
+            <div class="food-item-desc">精瘦低脂的安地斯駱馬科動物，口感接近牛肉，是熱水鎮餐廳最受遊客歡迎的主菜。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Alpaca#Meat" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/alpaca-steak" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Quinoa soup</div>
+            <div class="food-item-foreign">藜麥湯</div>
+            <div class="food-item-desc">安地斯藜麥燉湯，營養豐富，暖身又有助高原適應，爬馬丘比丘前的最佳補給。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Quinoa" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/sopa-de-quinua" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Trucha a la plancha</div>
+            <div class="food-item-foreign">煎虹鱒</div>
+            <div class="food-item-desc">烏魯班巴河新鮮虹鱒，炭火香煎，肉質嫩滑，是熱水鎮必嚐的在地食材料理。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Rainbow_trout" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/trucha-frita" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Chocolate caliente</div>
+            <div class="food-item-foreign">安地斯熱可可</div>
+            <div class="food-item-desc">秘魯是可可豆原產地，熱水鎮的熱可可香濃細滑，寒冷早晨出發前喝一杯是儀式感。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Hot_chocolate" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.peru.travel/en/masperu/peruvian-cacao-among-the-best-in-the-world" target="_blank">🌐 Peru Travel</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label lodging">🏨 住宿區域建議</span>
+        <div class="lodging-list">
+          <div class="lodging-area">
+            <div class="lodging-area-name">熱水鎮廣場周邊 <span class="lodging-badge">唯一選擇</span></div>
+            <div class="lodging-desc">9/10 需住熱水鎮 1 晚，選廣場或鐵路旁、步行至巴士站 5 分鐘以內的旅館。9 月旺季請提早 2–3 個月預訂。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=Aguas%20Calientes%20Machu%20Picchu%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label cnotes">⚠️ 注意事項</span>
+        <ul class="city-notes-list">
+          <li>遺址內禁止飲食（連水果也不行），違者罰款；只能帶水和密封零食低調食用</li>
+          <li>攜帶輕薄雨衣或防水外套，9 月偶有早晨山霧，午後通常放晴</li>
+          <li>巴士上山早上常大排隊，需提前 30–40 分鐘到巴士站排隊</li>
+          <li>遺址內手機訊號幾乎沒有，請提前下載離線地圖與語音導覽</li>
+          <li>入場實行時段制，請依票上指定時段準時抵達，逾時視同放棄</li>
+        </ul>
+      </div>
+
+      <div class="transport-box">
+        <strong>🚌 熱水鎮 ↔ 馬丘比丘</strong>
+        接駁巴士（Consettur）25分鐘，票價約 USD 24 來回，每15分鐘一班。末班下山巴士約 17:30，請務必確認時間。<br><br>
+        <strong>🚂 返回庫斯科</strong>
+        熱水鎮搭火車至奧蘭泰坦博後，搭私人接送廂型車前往庫斯科（約1.5小時）。
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────── -->
+  <!-- CUSCO -->
+  <!-- ──────────────────────────────────────── -->
+  <section class="city-section" id="cusco">
+    <div class="city-banner cusco">
+      <div>
+        <h2>庫斯科</h2>
+        <div class="foreign">Cusco · 海拔 3,400m · 印加帝國首都</div>
+      </div>
+      <div class="city-badges">
+        <span class="badge">📅 9/12</span>
+        <span class="badge">⏱ 1天</span>
+        <span class="badge">🏔 此時已適應高原5天，較無礙</span>
+      </div>
+    </div>
+
+    <div class="city-body">
+
+      <p class="city-intro">海拔 3,400m，前印加帝國首都，老城區整體列入 UNESCO 世界遺產。此時你已在高原適應整整 5 天，是全程最安全的高海拔遊覽時機。印加石牆與西班牙殖民建築奇特共存，讓每個轉角都在述說歷史。只停留 1 天，慢慢走、慢慢看。</p>
+
+      <div class="cat-group">
+        <span class="cat-label classic">⭐ 經典必去</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">🪨</div>
+            <div class="activity-content">
+              <h4>薩克薩瓦曼巨石城牆 <span class="foreign">Sacsayhuaman</span></h4>
+              <p>庫斯科北方山丘上的印加神廟與軍事要塞。巨石最重達 300 公噸，精密拼接無縫隙（無水泥）。制高點可俯瞰整個庫斯科市區，推薦上午前往光線最佳。需購「庫斯科觀光套票」入場。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://go2world.pixnet.net/blog/post/356177500" target="_blank">📖 Kenny與Li 16景點攻略</a>
+                <a class="ref-chip" href="https://dragonflytravelblog.com/peru-cusco-travel/" target="_blank">✈️ 蜻蜓旅遊日誌</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">☀️</div>
+            <div class="activity-content">
+              <h4>太陽宮殿 <span class="foreign">Qorikancha</span></h4>
+              <p>印加帝國最神聖的太陽神廟，原以黃金磚牆貼覆，西班牙征服後改建為天主教堂（Santo Domingo）覆蓋其上。現在石牆與教堂共存的奇特景觀令人嘆為觀止。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://kavana.tw/cusco/" target="_blank">✈️ 卡瓦納 庫斯科攻略</a>
+                <a class="ref-chip" href="https://go2world.pixnet.net/blog/post/356177500" target="_blank">📖 套票景點攻略</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">⛩️</div>
+            <div class="activity-content">
+              <h4>四方廣場 <span class="foreign">Plaza de Armas</span></h4>
+              <p>庫斯科心臟地帶，宏偉的大教堂（La Catedral）與耶穌會教堂對峙而立。廣場四周是印加帝國宮殿遺址改建的西班牙殖民建築，咖啡館陽台俯瞰廣場是最佳觀察位置。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://dragonflytravelblog.com/peru-cusco-travel/" target="_blank">✈️ 蜻蜓旅遊日誌（含詳細地圖）</a>
+                <a class="ref-chip" href="https://www.peruforless.com/travel-guides/cusco" target="_blank">📖 Peru For Less 庫斯科指南</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+
+      <div class="cat-group">
+        <span class="cat-label optional">＋ 彈性可選</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">🛒</div>
+            <div class="activity-content">
+              <h4>聖佩德羅市場 <span class="foreign">Mercado San Pedro</span></h4>
+              <p>庫斯科最大在地市場，販售新鮮蔬果、草藥、滷豬頭等庶民美食。可嚐各式秘魯水果汁與熱食小吃，比景點更有生活氣息。距四方廣場步行10分鐘。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.peruforless.com/travel-guides/cusco" target="_blank">📖 Peru For Less</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🏺</div>
+            <div class="activity-content">
+              <h4>聖布拉斯手工藝區 <span class="foreign">Barrio San Blas</span></h4>
+              <p>庫斯科老城最迷人的坡道街區，銀飾、木雕、陶瓷工坊林立，可直接向工匠購買。聖布拉斯教堂有世界上最精細的木雕講壇。適合下午自由漫步。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://dragonflytravelblog.com/peru-cusco-travel/" target="_blank">✈️ 蜻蜓旅遊日誌</a>
+                <a class="ref-chip" href="https://kavana.tw/cusco/" target="_blank">✈️ 卡瓦納 庫斯科</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🦙</div>
+            <div class="activity-content">
+              <h4>烤天竺鼠 <span class="foreign">Cuy Asado</span></h4>
+              <p>印加文化的傳統料理，至今仍是節慶食物。整隻炭烤，肉質接近兔肉。庫斯科有多家專門餐廳，建議晚餐時嘗試，是必打卡的文化體驗（視覺衝擊大，勇敢嘗試）。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://go2world.pixnet.net/blog/post/356177500" target="_blank">📖 Kenny與Li（含餐廳推薦）</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🎫</div>
+            <div class="activity-content">
+              <h4>庫斯科觀光套票 <span class="foreign">Boleto Turístico</span></h4>
+              <p>一票可進入16個景點，含薩克薩瓦曼、畢薩克遺址、莫雷、奧蘭泰坦博等（注意：Qorikancha 另購）。分 1 日票與 10 日票，6人同行建議直接購10日票以涵蓋聖谷行程。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://go2world.pixnet.net/blog/post/356177500" target="_blank">📖 套票詳細攻略（含購買方式）</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label food">🍽 美食特產</span>
+        <div class="food-grid">
+          <div class="food-item">
+            <div class="food-item-name">Cuy Asado</div>
+            <div class="food-item-foreign">整隻烤天竺鼠</div>
+            <div class="food-item-desc">整隻炭烤，視覺衝擊十足，是庫斯科最具代表性的文化料理，肉質近似兔肉，鮮嫩不柴。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Guinea_pig#As_food" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/cuy" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Rocoto relleno</div>
+            <div class="food-item-foreign">填料辣椒</div>
+            <div class="food-item-desc">紅色 Rocoto 辣椒填入肉餡與馬鈴薯，上覆融化起司烤製，香辣鹹鮮，庫斯科傳統名菜。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Rocoto_relleno" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/rocoto-relleno" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Chicha de jora</div>
+            <div class="food-item-foreign">玉米啤酒</div>
+            <div class="food-item-desc">發酵玉米製成的印加傳統飲品，微酸輕盈，在地 Chichería 小店才喝得到，是奇特的文化體驗。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Chicha_de_jora" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/chicha-de-jora" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Adobo Cusqueño</div>
+            <div class="food-item-foreign">庫斯科燉豬</div>
+            <div class="food-item-desc">安地斯辣椒慢燉豬肉，傳統週日早晨料理，湯汁濃郁，配玉米餅一起吃最道地。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.tasteatlas.com/adobo-cusqueno" target="_blank">🍽 TasteAtlas</a><a class="ref-chip" href="https://www.peru.travel/en/masperu/peruvian-food-cusco" target="_blank">🌐 Peru Travel</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label lodging">🏨 住宿區域建議</span>
+        <div class="lodging-list">
+          <div class="lodging-area">
+            <div class="lodging-area-name">四方廣場周邊 Plaza de Armas <span class="lodging-badge">推薦</span></div>
+            <div class="lodging-desc">步行至薩克薩瓦曼、Qorikancha、聖布拉斯均可達，餐廳選擇最多，適合只有 1 天的緊湊行程。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=Plaza%20de%20Armas%20Cusco%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+          <div class="lodging-area">
+            <div class="lodging-area-name">聖布拉斯 San Blas</div>
+            <div class="lodging-desc">安靜坡道街區，精品感強，但坡道較多。<strong>長輩建議選廣場附近，減少爬坡體力消耗。</strong></div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=San%20Blas%20Cusco%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label cnotes">⚠️ 注意事項</span>
+        <ul class="city-notes-list">
+          <li>仍是全程最高海拔（3,400m），雖已適應 5 天，步行仍請放慢腳步，避免急走</li>
+          <li>9/13 轉機日：庫斯科→利馬→伊基托斯，利馬轉機至少保留 3 小時緩衝（行李可能無法直掛）</li>
+          <li>庫斯科觀光套票（Boleto Turístico）建議買 10 日票，可涵蓋聖谷期間已使用的景點</li>
+          <li>高海拔讓酒精代謝更慢，飲酒量建議減半，避免加劇高原反應</li>
+        </ul>
+      </div>
+
+      <div class="transport-box">
+        <strong>✈️ 下一段交通（重要：當天兩段飛機）</strong>
+        庫斯科（CUZ）→ 利馬（LIM）：LATAM 國內班機，約 1 小時。<br>
+        利馬（LIM）→ 伊基托斯（IQT）：LATAM / Avianca，約 2 小時。<br>
+        ⚠️ 注意：庫斯科→伊基托斯無直飛，必須在利馬轉機，建議保留至少 <strong>3小時</strong> 轉機緩衝（考慮行李提取）。
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────── -->
+  <!-- IQUITOS -->
+  <!-- ──────────────────────────────────────── -->
+  <section class="city-section" id="iquitos">
+    <div class="city-banner iquitos">
+      <div>
+        <h2>伊基托斯</h2>
+        <div class="foreign">Iquitos · 海拔 0m · 亞馬遜叢林門戶</div>
+      </div>
+      <div class="city-badges">
+        <span class="badge">📅 9/13–17</span>
+        <span class="badge">⏱ 4天</span>
+        <span class="badge">🌿 叢林小屋2晚 + 市區2晚</span>
+        <span class="badge">☀️ 9月乾季，最佳時期</span>
+      </div>
+    </div>
+
+    <div class="city-body">
+
+      <p class="city-intro">全球最大無法以陸路抵達的城市，只能搭飛機或乘船數天才能到達。亞馬遜叢林門戶，9 月乾季水位較低，野生動物聚集在河岸，是動物觀察的黃金季節。從高原直接落地熱帶叢林，濕熱的空氣是另一種感官衝擊，準備好了嗎？</p>
+
+      <div class="cat-group">
+        <span class="cat-label classic">⭐ 經典必去</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">🐬</div>
+            <div class="activity-content">
+              <h4>粉紅淡水豚觀察 <span class="foreign">Pink River Dolphins</span></h4>
+              <p>亞馬遜獨有的粉紅色河豚（Boto），成年後全身呈粉紅色。部分地點可下水與其共游（需跟叢林小屋導遊確認）。上午是最佳觀察時段，豚群在淺灘活躍。是此行最難忘的動物體驗。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://localtrekkersperu.com/blog/pink-river-dolphins-iquitos-guide/" target="_blank">📖 Local Trekkers Peru 完整指南</a>
+                <a class="ref-chip" href="https://www.iletours.com/pink-river-dolphin-iquitos-peru-tour-package-2-days" target="_blank">🗺 Ile Tours 套裝行程</a>
+                <a class="ref-chip" href="https://www.tripadvisor.com/Attractions-g294315-Activities-Iquitos_Loreto_Region.html" target="_blank">⭐ TripAdvisor 伊基托斯</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🐊</div>
+            <div class="activity-content">
+              <h4>夜間凱門鱷尋蹤 <span class="foreign">Night Caiman Spotting</span></h4>
+              <p>夜間搭乘小船，手電筒掃描水面，尋找凱門鱷眼睛反光。導遊會徒手抓起小凱門鱷供近距離觀察（會放回）。驚悚刺激又安全，是亞馬遜夜間最精彩的活動。長輩也可參與。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.tripadvisor.com/Attractions-g294315-Activities-Iquitos_Loreto_Region.html" target="_blank">⭐ TripAdvisor 評價</a>
+                <a class="ref-chip" href="https://careergappers.com/visiting-iquitos-peruvian-amazon/" target="_blank">📖 Career Gappers 2026</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🌿</div>
+            <div class="activity-content">
+              <h4>亞馬遜叢林健行 <span class="foreign">Jungle Trek</span></h4>
+              <p>由專業當地導遊帶領，辨識藥草植物、毒箭蛙、金剛鸚鵡與樹懶。短程（30分鐘）適合長輩，深入版（2小時）適合年輕成員。導遊會教吹箭、採野果，知識與趣味兼具。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.lonelyplanet.com/destinations/peru/amazon-basin/iquitos" target="_blank">📖 Lonely Planet Iquitos</a>
+                <a class="ref-chip" href="https://www.peruforless.com/blog/iquitos-travel-guide" target="_blank">📖 Peru For Less 亞馬遜指南</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🏘️</div>
+            <div class="activity-content">
+              <h4>原住民村落文化參訪</h4>
+              <p>參訪亞馬遜流域原住民部落（如 Yagua 族），體驗傳統草藥療癒、吹箭表演、手工藝製作。導遊翻譯協助溝通，可購買部落手工紀念品（貝殼項鍊、木雕面具）直接惠及村民。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.peruforless.com/blog/iquitos-travel-guide" target="_blank">📖 Peru For Less</a>
+                <a class="ref-chip" href="https://zh.wikivoyage.org/wiki/%E4%BC%8A%E5%9F%BA%E6%89%98%E6%96%AF" target="_blank">📖 Wikivoyage 中文版</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+
+      <div class="cat-group">
+        <span class="cat-label optional">＋ 彈性可選</span>
+        <div class="activity-cards">
+
+          <div class="activity-card">
+            <div class="activity-icon">🛶</div>
+            <div class="activity-content">
+              <h4>貝倫浮水市場 <span class="foreign">Belén Floating Market</span></h4>
+              <p>全球罕見的漲退潮式浮水聚落，雨季時整個社區浮在水上，旱季落地。市場販售鮮魚、叢林食材、草藥，熱鬧又獨特。建議早上 7–9am 前往，並跟隨導遊確保安全。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.rainforestcruises.com/guides/belen-market-iquitos" target="_blank">📖 Rainforest Cruises 完整攻略</a>
+                <a class="ref-chip" href="https://www.lonelyplanet.com/points-of-interest/belen-mercado/1277432" target="_blank">📖 Lonely Planet</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🎣</div>
+            <div class="activity-content">
+              <h4>釣食人魚體驗 <span class="foreign">Piranha Fishing</span></h4>
+              <p>竹竿搭配生肉為餌，在亞馬遜河支流垂釣食人魚（Piranha）。食人魚其實膽小，不主動攻擊，釣起後可近距觀察鋒利牙齒後放回。是有驚無險的叢林趣味體驗。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://careergappers.com/visiting-iquitos-peruvian-amazon/" target="_blank">📖 Career Gappers 2026 活動總覽</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🌸</div>
+            <div class="activity-content">
+              <h4>巨型維多利亞睡蓮觀察 <span class="foreign">Victoria amazonica</span></h4>
+              <p>直徑可達 3 公尺的世界最大浮葉睡蓮，邊緣翹起如大盤，可承重小孩。在亞馬遜沼澤地帶常見，叢林小屋通常安排專程觀賞。入夜後蓮花盛開，白色轉粉紅色，令人嘆絕。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://zh.wikivoyage.org/wiki/%E4%BC%8A%E5%9F%BA%E6%89%98%E6%96%AF" target="_blank">📖 Wikivoyage 伊基托斯（中文）</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🌲</div>
+            <div class="activity-content">
+              <h4>樹冠步道 <span class="foreign">Canopy Walkway</span></h4>
+              <p>Ceiba Tops（Explorama 旗下）的獨家設施：距地面 35m 高空、長 500m 的吊橋式步道穿越樹冠層，鳥類與猴子近距離可見。對懼高者是一大挑戰，長輩建議評估後決定。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.explorama.com/ceiba-tops-lodge.html" target="_blank">🌐 Explorama 官網（含樹冠步道）</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon">🏠</div>
+            <div class="activity-content">
+              <h4>Eiffel 設計鐵屋 <span class="foreign">Casa de Hierro</span></h4>
+              <p>由艾菲爾鐵塔同一設計師 Gustave Eiffel 設計的金屬預制房屋，橡膠繁盛時期（1890年代）從比利時整船運來組裝，現為 UNESCO 世界遺址。位於市中心，適合在市區日逛覽時順道參觀。</p>
+              <div class="refs">
+                <a class="ref-chip" href="https://www.lonelyplanet.com/destinations/peru/amazon-basin/iquitos" target="_blank">📖 Lonely Planet Iquitos</a>
+                <a class="ref-chip" href="https://www.tripadvisor.com/Attractions-g294315-Activities-Iquitos_Loreto_Region.html" target="_blank">⭐ TripAdvisor</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+
+      <div class="cat-group">
+        <span class="cat-label food">🍽 美食特產</span>
+        <div class="food-grid">
+          <div class="food-item">
+            <div class="food-item-name">Juane</div>
+            <div class="food-item-foreign">香蕉葉包飯</div>
+            <div class="food-item-desc">米飯、雞肉、橄欖用香蕉葉包裹蒸熟，亞馬遜的特色節慶料理，香氣獨特令人難忘。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Juane" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/juane" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Tacacho con cecina</div>
+            <div class="food-item-foreign">炸香蕉 + 煙燻豬</div>
+            <div class="food-item-desc">搗碎炸青蕉球搭配煙燻豬肉，是伊基托斯最道地的早午餐，口感紮實下飯。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Tacacho" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.tasteatlas.com/tacacho-con-cecina" target="_blank">🍽 TasteAtlas</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Inchicapi</div>
+            <div class="food-item-foreign">花生雞湯</div>
+            <div class="food-item-desc">花生濃湯加木薯與香菜慢燉，濃郁溫暖，是亞馬遜家庭料理的代表，叢林小屋常見。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.tasteatlas.com/inchicapi" target="_blank">🍽 TasteAtlas</a><a class="ref-chip" href="https://www.peru.travel/en/masperu/loreto-gastronomy" target="_blank">🌐 Peru Travel</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Aguaje juice</div>
+            <div class="food-item-foreign">棕梠果汁</div>
+            <div class="food-item-desc">橘紅色熱帶棕梠果，酸甜特殊，只在亞馬遜喝得到，維生素 C 豐富，鮮榨最棒。</div>
+            <div class="refs"><a class="ref-chip" href="https://en.wikipedia.org/wiki/Mauritia_flexuosa" target="_blank">📖 Wikipedia</a><a class="ref-chip" href="https://www.peru.travel/en/masperu/aguaje-a-superfood-from-the-amazon" target="_blank">🌐 Peru Travel</a></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Chontacuro</div>
+            <div class="food-item-foreign">棕梠幼蟲串</div>
+            <div class="food-item-desc">棕梠樹幼蟲炭烤串燒，外酥內嫩，富含蛋白質，是亞馬遜最有名的「勇者食物」。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.tasteatlas.com/chontacuro" target="_blank">🍽 TasteAtlas</a><a class="ref-chip" href="https://www.peru.travel/en/masperu/loreto-gastronomy" target="_blank">🌐 Peru Travel</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+
+      <!-- Lodge comparison -->
+      <div class="cat-group">
+        <span class="cat-label" style="background:#EAF4EF; color:#1E6B45;">🏕 叢林小屋選擇比較</span>
+        <div class="lodge-table-wrap">
+        <table class="lodge-table">
+          <thead>
+            <tr>
+              <th>小屋</th>
+              <th>距市區</th>
+              <th>特色</th>
+              <th>參考連結</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Heliconia Amazon River Lodge</strong></td>
+              <td>約2小時船程（80km）</td>
+              <td>高評價、設施完整、多樣生態導覽、6人家庭房</td>
+              <td>
+                <a class="ref-chip" href="https://www.heliconialodge.com.pe/" target="_blank">🌐 官網</a>
+                <a class="ref-chip" href="https://www.tripadvisor.com/Hotel_Review-g8356729-d318163-Reviews-Heliconia_Amazon_River_Lodge-Indiana_Loreto_Region.html" target="_blank">⭐ TripAdvisor</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Muyuna Amazon Lodge</strong></td>
+              <td>約3小時船程（140km）</td>
+              <td>位於保護區內、野生動物種類最多、最沉浸式</td>
+              <td>
+                <a class="ref-chip" href="https://www.tripadvisor.com/Hotel_Review-g8318351-d318615-Reviews-Muyuna_Amazon_Lodge-Paraiso_Loreto_Region.html" target="_blank">⭐ TripAdvisor</a>
+                <a class="ref-chip" href="https://www.tripadvisor.com/Attraction_Review-g294315-d21022285-Reviews-Muyuna_Amazon_Lodge_Experience-Iquitos_Loreto_Region.html" target="_blank">⭐ 活動評價</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Ceiba Tops by Explorama</strong></td>
+              <td>約40分鐘（40km）</td>
+              <td>最舒適（有冷氣）、獨家500m樹冠步道、長輩友善</td>
+              <td>
+                <a class="ref-chip" href="https://www.explorama.com/ceiba-tops-lodge.html" target="_blank">🌐 官網</a>
+                <a class="ref-chip" href="https://www.tripadvisor.com/Hotel_Review-g8356729-d593830-Reviews-Ceiba_Tops_Lodge_by_Explorama-Indiana_Loreto_Region.html" target="_blank">⭐ TripAdvisor</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <p style="font-size:0.78rem; color:#777; margin-top:10px;">💡 建議詢問各小屋是否提供全包式套裝（含接送、三餐、導覽），6人可議團體價。</p>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label lodging">🏨 市區住宿推薦</span>
+        <div class="lodging-list">
+          <div class="lodging-area">
+            <div class="lodging-area-name">El Dorado Plaza Hotel <span class="lodging-badge">4星</span></div>
+            <div class="lodging-desc">位於伊基托斯主廣場旁，設施完整，是市區 2 晚最推薦的選擇，交通方便。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=El%20Dorado%20Plaza%20Hotel%20Iquitos%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+          <div class="lodging-area">
+            <div class="lodging-area-name">Casa Morey</div>
+            <div class="lodging-desc">歷史建築改建的精品飯店，評價極高，氛圍獨特，房數少請提早訂。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=Casa%20Morey%20Iquitos%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+          <div class="lodging-area">
+            <div class="lodging-area-name">Victoria Regia Hotel</div>
+            <div class="lodging-desc">性價比佳，附游泳池，距廣場步行 5 分鐘，適合預算較緊的選擇。</div>
+            <div class="refs"><a class="ref-chip" href="https://www.google.com/maps/search/?api=1&query=Victoria%20Regia%20Hotel%20Iquitos%20Peru" target="_blank">🗺 Google Maps</a></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="cat-divider">
+      <div class="cat-group">
+        <span class="cat-label cnotes">⚠️ 注意事項</span>
+        <ul class="city-notes-list">
+          <li>防蚊措施極重要：使用 DEET 30%+ 防蚊液，進叢林需穿長袖長褲（白天也要）</li>
+          <li>日曬強烈，即使在叢林中也容易曬傷，備 SPF50+ 防曬乳</li>
+          <li>叢林小屋通常無 Wi-Fi 或手機訊號，兩晚請享受與世界斷聯</li>
+          <li>飲用水一律用瓶裝水，包括刷牙；冰塊可詢問是否由淨水製成</li>
+          <li>亞馬遜河水色棕黃是單寧酸造成，非污染；接觸後洗手即可</li>
+        </ul>
+      </div>
+
+      <div class="transport-box">
+        <strong>✈️ 下一段交通</strong>
+        伊基托斯（IQT）→ 利馬（LIM）：LATAM / Avianca 國內班機，約 2 小時。9/17 返利馬，9/18 搭國際航班回台。
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────── -->
+  <!-- TIPS -->
+  <!-- ──────────────────────────────────────── -->
+  <section id="tips">
+    <h2 class="section-title">注意事項 &amp; 訂票清單</h2>
+    <div class="tips-grid">
+
+      <div class="tip-card">
+        <h3>🏔 高原反應對策</h3>
+        <ul>
+          <li><span>出發前諮詢醫師，開立 <strong>Diamox（乙醯唑胺）</strong>，抵達高海拔前1天開始服用。</span></li>
+          <li><span>抵達聖谷當天：只做輕度活動，多喝 <strong>古柯葉茶</strong>，早點入睡。</span></li>
+          <li><span>行程順序設計為低→高漸進：聖谷（2,800m）→ 熱水鎮（2,000m）→ 庫斯科（3,400m）。</span></li>
+          <li><span>高原第一天<strong>禁止飲酒</strong>，多喝水（每天2–3公升）。</span></li>
+          <li><span>頭痛嚴重時，立刻下降海拔休息；備 Ibuprofen 緩解症狀。</span></li>
+          <li><span>9月為乾季，白天約 20°C，夜間可降至 <strong>5°C</strong>，務必備薄羽絨或保暖外套。</span></li>
+        </ul>
+      </div>
+
+      <div class="tip-card">
+        <h3>🎫 必搶票清單</h3>
+        <ul>
+          <li><span><strong>華納比丘</strong> <span class="priority-badge high">最難搶</span>：每天400名額，建議3–4個月前訂。</span></li>
+          <li><span><strong>馬丘比丘入場</strong> <span class="priority-badge high">極重要</span>：指定時段，<a href="https://www.machupicchu.gob.pe/online-tickets/?lang=en" target="_blank">官網購買</a>。</span></li>
+          <li><span><strong>Inca / Peru Rail 火車</strong> <span class="priority-badge high">旺季搶手</span>：9月需提前1–2個月訂。</span></li>
+          <li><span><strong>伊基托斯叢林小屋</strong> <span class="priority-badge med">中等優先</span>：6人包團請提前確認房型與接送。</span></li>
+          <li><span><strong>利馬↔庫斯科 / 利馬↔伊基托斯</strong>：提早訂國內機票較便宜，建議3個月前。</span></li>
+          <li><span><strong>庫斯科觀光套票</strong>：現場購買即可，無需預訂。</span></li>
+        </ul>
+      </div>
+
+      <div class="tip-card">
+        <h3>💰 費用參考（每人，不含國際機票）</h3>
+        <ul>
+          <li><span><strong>住宿</strong>：USD 70–150/晚/人（3–4星）</span></li>
+          <li><span><strong>馬丘比丘入場票</strong>：約 USD 60–80/人</span></li>
+          <li><span><strong>華納比丘加票</strong>：約 USD 20–30/人</span></li>
+          <li><span><strong>觀景火車來回</strong>：約 USD 80–120/人</span></li>
+          <li><span><strong>伊基托斯叢林套裝（3晚含餐）</strong>：約 USD 300–500/人</span></li>
+          <li><span><strong>餐飲</strong>：約 USD 25–50/人/天</span></li>
+        </ul>
+      </div>
+
+      <div class="tip-card">
+        <h3>📱 實用資訊</h3>
+        <ul>
+          <li><span><strong>貨幣</strong>：秘魯索爾（PEN），1 USD ≈ 3.7 索爾。景點、餐廳多可刷卡，市集備現金。</span></li>
+          <li><span><strong>網路</strong>：可購買秘魯 SIM 卡（Bitel / Claro），伊基托斯叢林地區訊號弱。</span></li>
+          <li><span><strong>時差</strong>：台灣 UTC+8，利馬 UTC-5，相差 <strong>13小時</strong>（台灣快13小時）。</span></li>
+          <li><span><strong>語言</strong>：西班牙語為主，景點多有英文說明；伊基托斯建議請有英文的導遊。</span></li>
+          <li><span><strong>小費</strong>：餐廳10%、導遊每天 USD 5–10/人、叢林小屋服務生每日 USD 5/人。</span></li>
+          <li><span><strong>安全</strong>：利馬夜間避免帶貴重物品外出，伊基托斯市區部分地段跟隨導遊最安全。</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    秘魯家庭旅遊行程規劃 · 2026年9月 · 6人同行<br>
+    所有連結僅供參考，票價與開放資訊請以官方網站為準
+  </footer>
+
+</main>
+
+<script>
+  // ── Hamburger menu ──────────────────────────
+  const menuBtn = document.getElementById('menu-btn');
+  const sidebarEl = document.getElementById('sidebar');
+  const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+  function openMenu() {
+    sidebarEl.classList.add('sidebar-open');
+    sidebarOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    sidebarEl.classList.remove('sidebar-open');
+    sidebarOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  if (menuBtn) menuBtn.addEventListener('click', openMenu);
+  if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeMenu);
+
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progress-bar').style.width = pct + '%';
+  });
+
+  // Active nav item highlight
+  const sections = document.querySelectorAll('section[id], .city-section[id]');
+  const navLinks = document.querySelectorAll('#sidebar nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Smooth scroll
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (window.innerWidth <= 720) {
+        closeMenu();
+        setTimeout(() => {
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 320);
+      } else {
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
