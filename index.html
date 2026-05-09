@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>馬丘比丘購票攻略 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background: #f5f0eb; color: #2c2c2c; line-height: 1.7; }
+
+  /* ── Header ── */
+  .hero {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2d6a4f 60%, #52b788 100%);
+    color: white; text-align: center; padding: 60px 20px 50px;
+  }
+  .hero h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.5px; }
+  .hero p { font-size: 1.05rem; margin-top: 10px; opacity: 0.88; }
+  .badge { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 14px; font-size: 0.85rem; margin-top: 12px; }
+
+  /* ── Layout ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  section { margin: 40px 0; }
+  h2 { font-size: 1.5rem; font-weight: 700; color: #1a3a2a; border-left: 4px solid #52b788; padding-left: 14px; margin-bottom: 20px; }
+  h3 { font-size: 1.1rem; font-weight: 700; color: #2d6a4f; margin-bottom: 10px; }
+
+  /* ── Cards ── */
+  .card { background: white; border-radius: 14px; padding: 24px; margin-bottom: 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+
+  /* ── Route Cards ── */
+  .route-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .route-num { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: white; flex-shrink: 0; }
+  .c1 { background: #e67e22; }
+  .c2 { background: #2d6a4f; }
+  .c3 { background: #2980b9; }
+
+  .tag { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 10px; border-radius: 20px; margin: 2px; }
+  .tag-green { background: #d8f3dc; color: #1b4332; }
+  .tag-orange { background: #fde8d0; color: #7c3a05; }
+  .tag-blue { background: #d0e8fd; color: #053c7c; }
+  .tag-red { background: #fde0e0; color: #7c0505; }
+  .tag-best { background: #2d6a4f; color: white; }
+
+  .detail-row { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .info-list { list-style: none; margin-top: 10px; }
+  .info-list li { padding: 5px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.93rem; }
+  .info-list li:last-child { border-bottom: none; }
+  .info-list li::before { content: "▸ "; color: #52b788; font-size: 0.8rem; }
+
+  /* ── Price Table ── */
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  th { background: #1a3a2a; color: white; padding: 10px 14px; text-align: left; }
+  td { padding: 10px 14px; border-bottom: 1px solid #eee; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #f9f9f7; }
+  .price { font-weight: 700; color: #2d6a4f; }
+  .price-total { font-weight: 700; color: #c0392b; }
+  .highlight-row td { background: #d8f3dc !important; }
+
+  /* ── Transport ── */
+  .train-card { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; }
+  .train-icon { font-size: 2rem; }
+  .train-type { font-weight: 700; font-size: 1rem; color: #1a3a2a; }
+  .train-meta { font-size: 0.88rem; color: #555; margin-top: 3px; }
+
+  /* ── Timeline / Itinerary ── */
+  .plan-header { background: linear-gradient(90deg, #1a3a2a, #2d6a4f); color: white; border-radius: 12px 12px 0 0; padding: 18px 24px; }
+  .plan-header h3 { color: white; margin: 0; font-size: 1.15rem; }
+  .plan-header .subtitle { font-size: 0.88rem; opacity: 0.85; margin-top: 4px; }
+  .plan-body { background: white; border-radius: 0 0 12px 12px; padding: 24px; margin-bottom: 28px; box-shadow: 0 3px 14px rgba(0,0,0,0.08); }
+  .day-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: #2d6a4f; letter-spacing: 1px; margin: 18px 0 10px; border-bottom: 2px solid #d8f3dc; padding-bottom: 4px; }
+  .timeline { list-style: none; }
+  .timeline li { display: grid; grid-template-columns: 80px 1fr; gap: 12px; padding: 7px 0; font-size: 0.92rem; border-bottom: 1px dotted #eee; }
+  .timeline li:last-child { border-bottom: none; }
+  .tl-time { font-weight: 700; color: #2d6a4f; white-space: nowrap; font-size: 0.88rem; }
+  .tl-event { color: #333; }
+  .tl-note { font-size: 0.8rem; color: #888; margin-top: 2px; }
+  .plan-summary { background: #f0faf4; border-radius: 8px; padding: 14px 18px; margin-top: 16px; font-size: 0.9rem; }
+  .plan-summary strong { color: #1a3a2a; }
+
+  /* ── Warning / Tips ── */
+  .warning { background: #fff3cd; border-left: 4px solid #f39c12; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 0.92rem; }
+  .warning strong { color: #7c4a00; }
+  .tip { background: #d8f3dc; border-left: 4px solid #2d6a4f; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 0.92rem; }
+  .tip strong { color: #1a3a2a; }
+
+  /* ── Buttons / Links ── */
+  .btn { display: inline-block; background: #2d6a4f; color: white; padding: 9px 20px; border-radius: 8px; text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-top: 12px; transition: background 0.2s; }
+  .btn:hover { background: #1a3a2a; }
+  .btn-outline { background: transparent; border: 2px solid #2d6a4f; color: #2d6a4f; margin-left: 8px; }
+  .btn-outline:hover { background: #2d6a4f; color: white; }
+
+  /* ── Footer ── */
+  footer { background: #1a3a2a; color: rgba(255,255,255,0.7); text-align: center; padding: 28px 20px; font-size: 0.85rem; margin-top: 60px; }
+  footer a { color: #52b788; }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 1.7rem; }
+    .card-grid { grid-template-columns: 1fr; }
+    .timeline li { grid-template-columns: 65px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <h1>🏔 馬丘比丘購票攻略</h1>
+    <p>路線 × 套餐 × 交通 × 行程安排｜2026 年版</p>
+    <div class="badge">適合 6 人小團 · 庫斯科出發 · 含華納比丘</div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ══════════════════════════════════
+     SECTION 1 — 遺址路線說明
+════════════════════════════════════ -->
+<section>
+  <h2>一、遺址路線總覽</h2>
+
+  <div class="warning">
+    <strong>⚠ 重要：</strong>馬丘比丘採「分時段、分路線」入場制，每種路線與時段皆獨立購票，無法入場後自由切換。每天共 10 個時段，建議提前 <strong>4 個月</strong>以上訂票。
+  </div>
+
+  <div class="card-grid">
+
+    <!-- Circuit 1 -->
+    <div class="card">
+      <div class="route-header">
+        <div class="route-num c1">1</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem;">路線一｜全景環線</div>
+          <div style="font-size:0.83rem;color:#777;">Circuito 1 · Panoramic</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <span class="tag tag-orange">攝影首選</span>
+        <span class="tag tag-blue">較少遊客</span>
+      </div>
+      <ul class="info-list">
+        <li>可選馬丘比丘山（3 小時，需 18 歲以上）</li>
+        <li>上層觀景台（2.5 小時）</li>
+        <li>太陽門 Intipunku（4 小時，旺季開放）</li>
+        <li>印加橋（2–3 小時，旺季開放）</li>
+        <li>注意：<strong>不含下層主遺址</strong>入內</li>
+      </ul>
+      <div class="detail-row" style="margin-top:12px;">
+        <span class="tag tag-green">⏱ 2.5–4 小時</span>
+        <span class="tag tag-green">💰 $45–48</span>
+      </div>
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;">
+        <div style="font-size:0.78rem;font-weight:700;color:#999;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">購票連結</div>
+        <a class="btn" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方（西班牙文）</a>
+        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.getyourguide.com/machu-picchu-l1570/oficjalne-bilety-do-machu-picchu-t122789/" target="_blank">GetYourGuide</a>
+        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-Entrance-ticket/d4928-175410P8" target="_blank">Viator</a>
+      </div>
+    </div>
+
+    <!-- Circuit 2 -->
+    <div class="card" style="border: 2px solid #2d6a4f;">
+      <div class="route-header">
+        <div class="route-num c2">2</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem;">路線二｜經典路線</div>
+          <div style="font-size:0.83rem;color:#777;">Circuito 2 · Classic</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <span class="tag tag-best">★ 最熱門</span>
+        <span class="tag tag-green">首訪必選</span>
+      </div>
+      <ul class="info-list">
+        <li>太陽神殿 Temple of the Sun</li>
+        <li>神聖廣場 Sacred Plaza</li>
+        <li>皇家寢宮 Royal Quarters</li>
+        <li>標誌性梯田俯瞰角度</li>
+        <li>全程約 <strong>1.5 公里</strong>，起伏平緩</li>
+      </ul>
+      <div class="detail-row" style="margin-top:12px;">
+        <span class="tag tag-green">⏱ 約 2.5 小時</span>
+        <span class="tag tag-green">💰 $47–62</span>
+        <span class="tag tag-orange">每天 10 時段</span>
+      </div>
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;">
+        <div style="font-size:0.78rem;font-weight:700;color:#999;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">購票連結</div>
+        <a class="btn" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方（西班牙文）</a>
+        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-entrance-ticket-to-circuit-2-t590957/" target="_blank">GetYourGuide</a>
+        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-Entrance-Ticket/d4928-106179P3" target="_blank">Viator</a>
+      </div>
+    </div>
+
+    <!-- Circuit 3 -->
+    <div class="card">
+      <div class="route-header">
+        <div class="route-num c3">3</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem;">路線三｜皇家路線</div>
+          <div style="font-size:0.83rem;color:#777;">Circuito 3 · Royalty</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <span class="tag tag-blue">深度探索</span>
+        <span class="tag tag-orange">含農業區</span>
+      </div>
+      <ul class="info-list">
+        <li>華納比丘山 Huayna Picchu（+$65，限 400 人/天）</li>
+        <li>下層廢墟 Lower Ruins</li>
+        <li>大岩洞 Great Cavern（6–10 月開放，5 小時）</li>
+        <li>小華納比丘 Huchuy Picchu（季節性）</li>
+        <li>城市區 + 農業梯田全覽</li>
+      </ul>
+      <div class="detail-row" style="margin-top:12px;">
+        <span class="tag tag-green">⏱ 2.5–5 小時</span>
+        <span class="tag tag-red">華納比丘需提前訂</span>
+      </div>
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid #eee;">
+        <div style="font-size:0.78rem;font-weight:700;color:#999;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">購票連結</div>
+        <a class="btn" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方（西班牙文）</a>
+        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-circuit-3-entry-ticket-t30551/" target="_blank">GetYourGuide</a>
+        <a class="btn btn-outline" style="font-size:0.78rem;padding:5px 11px;margin:2px;" href="https://www.viator.com/tours/Sacred-Valley/MACHU-PICCHU-AND-HUAYNA-PICCHU-ENTRANCE-TICKET-08-00-AM/d4928-117644P18" target="_blank">Viator（含華納比丘）</a>
+      </div>
+    </div>
+
+  </div><!-- /card-grid -->
+
+  <!-- 加購登山選項 -->
+  <div class="card" style="margin-top:0;">
+    <h3>加購登山門票比較</h3>
+    <table>
+      <thead>
+        <tr><th>山峰</th><th>時段</th><th>名額/天</th><th>難度</th><th>費用/人</th><th>購票連結</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>華納比丘山</strong><br><small>Huayna Picchu</small></td>
+          <td>06:00 / 07:00 兩梯次</td>
+          <td><strong class="price-total">400 人</strong></td>
+          <td>⬛⬛⬛⬜ 陡</td>
+          <td class="price">~$53–65</td>
+          <td>
+            <a class="btn" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a>
+            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-huayana-picchu-entry-ticket-t887624/" target="_blank">GetYourGuide</a>
+            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-and-Huayna-Picchu-Admission-Ticket-2026-Sacred-Valley-BOOK-NOW/d4928-5243P121" target="_blank">Viator</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>馬丘比丘山</strong><br><small>Machu Picchu Mountain</small></td>
+          <td>06:00 起</td>
+          <td>800 人</td>
+          <td>⬛⬛⬜⬜ 中</td>
+          <td class="price">~$53–85</td>
+          <td>
+            <a class="btn" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a>
+            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-huayna-picchu-mountain-entry-ticket-t631172/" target="_blank">GetYourGuide</a>
+            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.viator.com/tours/Sacred-Valley/Huaynapicchu-hike-7am-Machu-Picchu-entrance-ticket-6am/d4928-103153P10" target="_blank">Viator</a>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>太陽門</strong><br><small>Intipunku</small></td>
+          <td>包含在路線 1</td>
+          <td>無限制</td>
+          <td>⬛⬜⬜⬜ 易</td>
+          <td class="price">含路線 1 票價</td>
+          <td>
+            <a class="btn" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a>
+            <a class="btn btn-outline" style="font-size:0.75rem;padding:4px 10px;display:block;margin:2px 0;text-align:center;" href="https://www.getyourguide.com/machu-picchu-l1570/oficjalne-bilety-do-machu-picchu-t122789/" target="_blank">GetYourGuide</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warning" style="margin-top:14px;">
+      <strong>⚠ 緊急提醒：</strong>你們 6 人計劃去華納比丘（9 月旺季），每天僅 400 個名額，<strong>現在就要訂！</strong>等愈久愈難搶到。
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     SECTION 2 — 所有票務產品一覽
+════════════════════════════════════ -->
+<section>
+  <h2>二、所有票務產品一覽</h2>
+
+  <!-- 2A 個別單項票 -->
+  <h3 style="margin-bottom:12px;">A. 個別單項票（可分開購買，自行搭配路線）</h3>
+  <div class="tip" style="margin-bottom:16px;">
+    <strong>💡 說明：</strong>每張票對應一條路線，不可入場後換線。6 人可各選不同路線，但需分別訂票。官方網站僅有西班牙文，每帳號限購 5 張；GetYourGuide / Viator 為英文介面且有退款保障，溢價約 $5–15/人。
+  </div>
+
+  <div class="card" style="padding:0;overflow:hidden;">
+    <table>
+      <thead>
+        <tr>
+          <th>票種</th>
+          <th>適用路線</th>
+          <th style="white-space:nowrap;">官方價/人</th>
+          <th>官方售票</th>
+          <th>GetYourGuide</th>
+          <th>Viator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>路線一｜全景環線</strong><br>
+            <small style="color:#888;">Circuit 1 · Panoramic</small>
+          </td>
+          <td>上層觀景台、太陽門、印加橋、馬丘比丘山（需另購）</td>
+          <td class="price">~$45–48</td>
+          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/machu-picchu-l1570/oficjalne-bilety-do-machu-picchu-t122789/" target="_blank">查看</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-Entrance-ticket/d4928-175410P8" target="_blank">查看</a></td>
+        </tr>
+        <tr class="highlight-row">
+          <td>
+            <strong>路線二｜經典路線 ★</strong><br>
+            <small style="color:#888;">Circuit 2 · Classic</small>
+          </td>
+          <td>太陽神殿、神聖廣場、皇家寢宮、標誌梯田視角</td>
+          <td class="price">~$47–62</td>
+          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-entrance-ticket-to-circuit-2-t590957/" target="_blank">查看</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-Entrance-Ticket/d4928-106179P3" target="_blank">查看</a></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>路線三｜皇家路線</strong><br>
+            <small style="color:#888;">Circuit 3 · Royalty</small>
+          </td>
+          <td>下層廢墟、農業梯田、大岩洞（6–10月）、小華納比丘</td>
+          <td class="price">~$50–56</td>
+          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-circuit-3-entry-ticket-t30551/" target="_blank">查看</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/MACHU-PICCHU-AND-HUAYNA-PICCHU-ENTRANCE-TICKET-08-00-AM/d4928-117644P18" target="_blank">查看（含HP）</a></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>華納比丘山加購</strong><br>
+            <small style="color:#888;">Huayna Picchu Add-on</small>
+          </td>
+          <td>需搭配路線三購買，06:00 / 07:00 兩梯次，限 400 人</td>
+          <td class="price">~$53–65</td>
+          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-huayana-picchu-entry-ticket-t887624/" target="_blank">查看</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/Machu-Picchu-and-Huayna-Picchu-Admission-Ticket-2026-Sacred-Valley-BOOK-NOW/d4928-5243P121" target="_blank">查看</a></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>馬丘比丘山加購</strong><br>
+            <small style="color:#888;">Machu Picchu Mountain Add-on</small>
+          </td>
+          <td>需搭配路線一購買，06:00 起，限 800 人，較易訂到</td>
+          <td class="price">~$53–85</td>
+          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/urubamba-l164518/machu-picchu-huayna-picchu-mountain-entry-ticket-t631172/" target="_blank">查看</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/tours/Sacred-Valley/Huaynapicchu-hike-7am-Machu-Picchu-entrance-ticket-6am/d4928-103153P10" target="_blank">查看</a></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>所有路線入口總覽</strong><br>
+            <small style="color:#888;">Browse All Tickets</small>
+          </td>
+          <td>在 GetYourGuide 瀏覽所有馬丘比丘票種</td>
+          <td class="price">各異</td>
+          <td><a class="btn" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://tuboleto.cultura.pe/" target="_blank">🏛 官方</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.getyourguide.com/machu-picchu-l1570/entry-tickets-tc123/" target="_blank">全部票種</a></td>
+          <td><a class="btn btn-outline" style="font-size:0.75rem;padding:5px 10px;white-space:nowrap;" href="https://www.viator.com/Cusco-attractions/Machu-Picchu/d937-a3358" target="_blank">全部票種</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warning" style="margin-bottom:28px;">
+    <strong>⚠ 注意：</strong>路線二（經典）2026 年 8 月前已幾乎售罄；9 月名額仍緊俏。購票連結請以實際頁面為準，建議比對官方價格後再決定平台。
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     SECTION 3 — 火車 & 交通
+════════════════════════════════════ -->
+<section>
+  <h2>三、火車 & 交通攻略</h2>
+
+  <!-- 交通流程 -->
+  <div class="card">
+    <h3>🗺 庫斯科 → 馬丘比丘 完整交通流程</h3>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;font-size:0.9rem;">
+      <div style="background:#1a3a2a;color:white;padding:8px 16px;border-radius:8px;font-weight:700;">庫斯科市區</div>
+      <div>🚐 廂型車<br><small>約 2 小時</small></div>
+      <div style="background:#2d6a4f;color:white;padding:8px 16px;border-radius:8px;font-weight:700;">歐雅亞坦坦博<br><small>火車站</small></div>
+      <div>🚂 火車<br><small>約 1.5 小時</small></div>
+      <div style="background:#52b788;color:white;padding:8px 16px;border-radius:8px;font-weight:700;">阿瓜斯卡連特斯<br><small>山腳小鎮</small></div>
+      <div>🚌 巴士<br><small>約 25 分鐘</small></div>
+      <div style="background:#e67e22;color:white;padding:8px 16px;border-radius:8px;font-weight:700;">馬丘比丘<br><small>遺址入口</small></div>
+    </div>
+    <p style="font-size:0.83rem;color:#888;margin-top:12px;">* 若選擇印加古道健行，火車站為庫斯科波羅依站或 KM 104，需另行確認路線</p>
+  </div>
+
+  <!-- 火車選項 -->
+  <div class="card">
+    <h3>🚂 火車等級比較（歐雅亞坦坦博 ↔ 阿瓜斯卡連特斯）</h3>
+    <table>
+      <thead>
+        <tr><th>等級</th><th>火車公司</th><th>車程</th><th>來回票/人</th><th>6 人總計</th><th>特色</th><th>訂票</th></tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-row">
+          <td><strong>Expedition<br>（經濟艙）</strong></td>
+          <td>Peru Rail</td>
+          <td>約 1.5 小時</td>
+          <td class="price">~$80</td>
+          <td class="price-total">~$480</td>
+          <td>舒適、CP 值高，含餐車</td>
+          <td><a class="btn" href="https://www.perurail.com" target="_blank">Peru Rail</a></td>
+        </tr>
+        <tr>
+          <td><strong>Vistadome<br>（觀景艙）</strong></td>
+          <td>Peru Rail</td>
+          <td>約 1.5 小時</td>
+          <td class="price">~$140–180</td>
+          <td class="price-total">~$840–1,080</td>
+          <td>360° 玻璃天窗，沿途雪山美景</td>
+          <td><a class="btn" href="https://www.perurail.com" target="_blank">Peru Rail</a></td>
+        </tr>
+        <tr>
+          <td><strong>Voyager<br>（經濟艙）</strong></td>
+          <td>Inca Rail</td>
+          <td>約 1.5 小時</td>
+          <td class="price">~$80</td>
+          <td class="price-total">~$480</td>
+          <td>較少評論，整體投訴少於 Peru Rail</td>
+          <td><a class="btn" href="https://www.incarail.com" target="_blank">Inca Rail</a></td>
+        </tr>
+        <tr>
+          <td><strong>360°<br>（景觀車廂）</strong></td>
+          <td>Inca Rail</td>
+          <td>約 1.5 小時</td>
+          <td class="price">~$140–180</td>
+          <td class="price-total">~$840–1,080</td>
+          <td>穹頂設計，景色絕佳</td>
+          <td><a class="btn" href="https://www.incarail.com" target="_blank">Inca Rail</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin-top:14px;">
+      <strong>💡 建議：</strong>去程選 Expedition 省費用，<strong>回程升級 Vistadome 或 360°</strong>，趁著下午光線最美的時候欣賞安地斯山風光。直接在 Peru Rail 或 Inca Rail 官網分開購買去回程不同等級即可。
+    </div>
+  </div>
+
+  <!-- 大巴 & 廂型車 -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>🚌 山腳巴士（遺址接駁）</h3>
+      <ul class="info-list">
+        <li>路線：阿瓜斯卡連特斯 ↔ 遺址入口</li>
+        <li>費用：約 <strong>$12–14/人</strong>（來回）</li>
+        <li>車程：約 25–30 分鐘</li>
+        <li>首班：<strong>05:30 AM</strong>（推薦搶第一班）</li>
+        <li>末班：約 17:30（下山末班更晚）</li>
+        <li>排隊高峰：06:00 前已大排長龍</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🚐 庫斯科廂型車接駁</h3>
+      <ul class="info-list">
+        <li>路線：庫斯科 → 歐雅亞坦坦博</li>
+        <li>費用：約 <strong>$8–15/人</strong>（單程）</li>
+        <li>車程：約 1.5–2 小時</li>
+        <li>一般發車：06:00–08:00（配合火車班次）</li>
+        <li>需自行向飯店或庫斯科旅行社預訂，或透過 GetYourGuide 搜尋「Cusco to Ollantaytambo transfer」</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 關鍵時刻表 -->
+  <div class="card">
+    <h3>⏰ 關鍵時刻備忘</h3>
+    <table>
+      <thead><tr><th>節點</th><th>重要時間</th><th>備註</th></tr></thead>
+      <tbody>
+        <tr><td>馬丘比丘開門</td><td><strong>06:00 AM</strong></td><td>建議搶第一時段入場</td></tr>
+        <tr><td>華納比丘第一梯次</td><td><strong>06:00 AM</strong></td><td>每梯次約 200 人，3.5 小時</td></tr>
+        <tr><td>華納比丘第二梯次</td><td><strong>07:00 AM</strong></td><td>稍微充裕，但仍需提前訂</td></tr>
+        <tr><td>山腳巴士首班</td><td><strong>05:30 AM</strong></td><td>第一班上山必排隊，建議 05:00 前到站</td></tr>
+        <tr><td>遺址最後入場</td><td><strong>17:00</strong></td><td>最晚入場時間，依時段票而定</td></tr>
+        <tr><td>下山末班巴士</td><td><strong>17:30</strong></td><td>錯過需步行或等計程車</td></tr>
+        <tr><td>火車建議提前到站</td><td><strong>發車前 30 分鐘</strong></td><td>取票、安檢需要時間</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     SECTION 4 — 住宿推薦
+════════════════════════════════════ -->
+<section>
+  <h2>四、阿瓜斯卡連特斯住宿推薦（3 個價格區間）</h2>
+  <p style="font-size:0.9rem;color:#555;margin-bottom:16px;">以下為 6 人住宿 1 晚、依預算分三級的推薦選項，建議透過 Booking.com 確認實際空房與最新定價。</p>
+
+  <!-- Tier 1 -->
+  <h3 style="margin:0 0 12px;">💰 平價型｜$30–60/人晚（6人約 $180–360）</h3>
+  <div class="card-grid" style="margin-bottom:24px;">
+    <div class="card">
+      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Ecopackers Machupicchu Hostel</div>
+      <div class="detail-row">
+        <span class="tag tag-green">含早餐</span>
+        <span class="tag tag-blue">免費行李寄存</span>
+        <span class="tag tag-orange">山景露台</span>
+      </div>
+      <ul class="info-list" style="margin-top:10px;">
+        <li>距巴士站步行約 5 分鐘</li>
+        <li>附餐廳、吧台，社交氣氛佳</li>
+        <li>免費火車站接送</li>
+        <li>約 $13–29/人晚（視房型）</li>
+      </ul>
+      <a class="btn" style="margin-top:12px;" href="https://www.booking.com/hotel/pe/ecopackers-machupicchu-hostel.html" target="_blank">Booking.com 查價</a>
+    </div>
+    <div class="card">
+      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">El Tambo Machupicchu</div>
+      <div class="detail-row">
+        <span class="tag tag-green">市中心</span>
+        <span class="tag tag-blue">基本整潔</span>
+      </div>
+      <ul class="info-list" style="margin-top:10px;">
+        <li>位置便利，步行可達主要街道</li>
+        <li>設施簡單，主打性價比</li>
+        <li>約 $30–50/晚（整間）</li>
+        <li>適合預算有限、只需一晚的旅人</li>
+      </ul>
+      <a class="btn" style="margin-top:12px;" href="https://www.tripadvisor.com/Hotels-g304036-Aguas_Calientes_Machu_Picchu_Sacred_Valley_Cusco_Region-Hotels.html" target="_blank">TripAdvisor 查看</a>
+    </div>
+  </div>
+
+  <!-- Tier 2 -->
+  <h3 style="margin:0 0 12px;">💰💰 中等型｜$60–120/人晚（6人約 $360–720）★ 符合你的預算</h3>
+  <div class="card-grid" style="margin-bottom:24px;">
+    <div class="card" style="border:2px solid #2d6a4f;">
+      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Panorama B&B ⭐⭐⭐</div>
+      <div class="detail-row">
+        <span class="tag tag-best">推薦</span>
+        <span class="tag tag-green">含早餐</span>
+        <span class="tag tag-blue">河景陽台</span>
+      </div>
+      <ul class="info-list" style="margin-top:10px;">
+        <li>烏魯班巴河沿岸，私人陽台河景</li>
+        <li>近期翻新，環境安靜舒適</li>
+        <li>約 $75–102/晚（雙人間）</li>
+        <li>6 人可訂 3 間雙人房</li>
+      </ul>
+      <a class="btn" style="margin-top:12px;" href="https://www.booking.com/hotel/pe/panorama-b-amp-b.html" target="_blank">Booking.com 查價</a>
+    </div>
+    <div class="card" style="border:2px solid #2d6a4f;">
+      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Hotel Taypikala Machupicchu ⭐⭐⭐</div>
+      <div class="detail-row">
+        <span class="tag tag-best">推薦</span>
+        <span class="tag tag-orange">距巴士站 200m</span>
+        <span class="tag tag-blue">山景</span>
+      </div>
+      <ul class="info-list" style="margin-top:10px;">
+        <li><strong>距巴士站僅 200 公尺</strong>，早上搶頭班最方便</li>
+        <li>附餐廳、花園，近溫泉</li>
+        <li>提供按摩服務</li>
+        <li>約 $147–149/晚（雙人間）</li>
+      </ul>
+      <a class="btn" style="margin-top:12px;" href="https://www.booking.com/hotel/pe/taypikala-machupicchu.html" target="_blank">Booking.com 查價</a>
+      <a class="btn btn-outline" style="margin-top:12px;" href="https://www.taypikala.com/en/hotel-taypikalamachupicchu-in-machu-picchu/" target="_blank">官網</a>
+    </div>
+  </div>
+
+  <!-- Tier 3 -->
+  <h3 style="margin:0 0 12px;">💰💰💰 精品型｜$150+/人晚（6人約 $900+）</h3>
+  <div class="card-grid" style="margin-bottom:12px;">
+    <div class="card">
+      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Casa del Sol Machupicchu ⭐⭐⭐⭐</div>
+      <div class="detail-row">
+        <span class="tag tag-blue">市中心</span>
+        <span class="tag tag-green">禮賓服務</span>
+        <span class="tag tag-orange">近溫泉</span>
+      </div>
+      <ul class="info-list" style="margin-top:10px;">
+        <li>精緻裝潢，附餐廳及禮賓接送</li>
+        <li>鄰近熱門景點與溫泉</li>
+        <li>約 $149–244/晚（雙人間）</li>
+      </ul>
+      <a class="btn" style="margin-top:12px;" href="https://www.booking.com/hotel/pe/casa-del-sol-machupicchu.html" target="_blank">Booking.com 查價</a>
+    </div>
+    <div class="card">
+      <div style="font-weight:700;font-size:1rem;margin-bottom:6px;">Inkaterra Machu Picchu Pueblo Hotel ⭐⭐⭐⭐⭐</div>
+      <div class="detail-row">
+        <span class="tag tag-best">頂級體驗</span>
+        <span class="tag tag-blue">雲霧森林</span>
+        <span class="tag tag-green">全包方案</span>
+      </div>
+      <ul class="info-list" style="margin-top:10px;">
+        <li>80 間白牆小屋嵌入雲霧森林，極具特色</li>
+        <li>含餐飲、自然導覽、設施</li>
+        <li>約 $333–592/晚</li>
+        <li>適合將住宿本身視為旅遊體驗的旅人</li>
+      </ul>
+      <a class="btn" style="margin-top:12px;" href="https://reservations.inkaterra.com/" target="_blank">官網訂房</a>
+      <a class="btn btn-outline" style="margin-top:12px;" href="https://www.tripadvisor.com/Hotel_Review-g304036-d306634-Reviews-Inkaterra_Machu_Picchu_Pueblo_Hotel-Aguas_Calientes_Machu_Picchu_Sacred_Valley_Cusco_Region.html" target="_blank">TripAdvisor</a>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>💡 6人訂房建議：</strong>Taypikala 距巴士站最近（適合搶頭班），Panorama B&B 環境最安靜。建議在 Booking.com 搜尋「Aguas Calientes」，勾選「免費取消」並比較 9 月空房價格後再訂。
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     SECTION 5 — 私人導遊
+════════════════════════════════════ -->
+<section>
+  <h2>五、遺址私人導遊安排</h2>
+
+  <div class="card">
+    <h3>📋 基本資訊</h3>
+    <table>
+      <thead><tr><th>項目</th><th>說明</th></tr></thead>
+      <tbody>
+        <tr><td>是否強制</td><td>6 人以下<strong>不強制</strong>。10 人以上依法需持牌導遊。</td></tr>
+        <tr><td>半日導覽費用（6人）</td><td class="price">$80–150（約 2–3 小時）</td></tr>
+        <tr><td>全日導覽費用（6人）</td><td class="price">$150–300（4–6 小時）</td></tr>
+        <tr><td>平均每人費用</td><td class="price">$13–50/人</td></tr>
+        <tr><td>可用語言</td><td>西班牙文、英文、葡萄牙文（主流）；中文需特別指定</td></tr>
+        <tr><td>中文導遊</td><td>可用，需透過平台或代理商提前預約，費用略高</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>🌐 線上預訂（推薦，有保障）</h3>
+      <ul class="info-list">
+        <li>支付有保障，可事先確認導遊語言與評價</li>
+        <li>費用含平台服務費約 15–25%，比現場略貴</li>
+        <li>建議提前 2–3 週預訂（9 月旺季）</li>
+      </ul>
+      <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;">
+        <a class="btn" href="https://www.getyourguide.com/machu-picchu-l1570/" target="_blank">GetYourGuide 導遊</a>
+        <a class="btn btn-outline" href="https://www.viator.com/tours/Sacred-Valley/2-5hr-Guided-Tour-of-Machu-Picchu-with-top-rated-Private-Guide/d4928-103153P4" target="_blank">Viator 私人導遊</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>🏘 現場僱用（彈性，較便宜）</h3>
+      <ul class="info-list">
+        <li>在阿瓜斯卡連特斯巴士站附近或遺址入口洽談</li>
+        <li>現場議價，直接溝通路線需求</li>
+        <li>品質參差，建議要求看執照（DIRCETUR）</li>
+        <li>費用約 $80–120（6 人，2–3 小時）</li>
+      </ul>
+      <div style="margin-top:12px;">
+        <a class="btn btn-outline" href="https://carlosmachupicchu.com/en/guides-in-languages-from-around-the-world" target="_blank">多語言導遊查詢</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>💡 中文導遊：</strong>如需中文導覽，建議透過 GetYourGuide 搜尋「Machu Picchu Mandarin guide」，或聯繫 carlosmachupicchu.com 確認是否有中文人選。現場臨時找到中文導遊的機率很低。
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     SECTION 6 — 行程安排方案（3 個）
+════════════════════════════════════ -->
+<section>
+  <h2>六、行程安排方案（6 人 · 庫斯科出發 · 含華納比丘）</h2>
+
+  <div class="tip">
+    <strong>前提條件：</strong>第 1 天中午抵達阿瓜斯卡連特斯 → 下午走路線二（經典）→ 第 2 天一早進遺址 → 加爬華納比丘 → 午餐後 14:00–15:30 離開搭火車回庫斯科
+  </div>
+
+  <!-- ── 方案 A ── -->
+  <div>
+    <div class="plan-header">
+      <h3>方案 A｜標準悠閒版（首次推薦）</h3>
+      <div class="subtitle">時間最充裕 · 壓力最低 · 適合第一次來的旅人</div>
+    </div>
+    <div class="plan-body">
+
+      <div class="day-label">Day 1 — 庫斯科出發 · 抵達 · 下午參觀</div>
+      <ul class="timeline">
+        <li><span class="tl-time">07:00</span><div class="tl-event">廂型車從庫斯科飯店出發前往歐雅亞坦坦博<div class="tl-note">需提前預訂接駁車（約 $8–15/人），或由飯店協助安排共乘廂型車</div></div></li>
+        <li><span class="tl-time">09:00</span><div class="tl-event">抵達歐雅亞坦坦博火車站，辦理登車<div class="tl-note">建議提前 30 分鐘到，可買水和零食</div></div></li>
+        <li><span class="tl-time">09:30</span><div class="tl-event">🚂 搭乘 Expedition 火車出發</div></li>
+        <li><span class="tl-time">11:00</span><div class="tl-event">抵達阿瓜斯卡連特斯，辦理入住<div class="tl-note">中等住宿推薦：Rupa Wasi Lodge / Inti Punku Hotel（$70–100/人/晚，含早）</div></div></li>
+        <li><span class="tl-time">11:30</span><div class="tl-event">🍽 鎮上午餐（主街 Av. Imperio de los Incas 有多家餐廳）<div class="tl-note">推薦嘗試烤羊駝（Alpaca）或秘魯燉牛肉</div></div></li>
+        <li><span class="tl-time">13:00</span><div class="tl-event">🚌 搭巴士上山（25 分鐘）</div></li>
+        <li><span class="tl-time">13:30</span><div class="tl-event">進入遺址，開始<strong>路線二｜經典路線</strong><div class="tl-note">導遊講解約 2 小時，重點：太陽神殿、神聖廣場、皇家寢宮</div></div></li>
+        <li><span class="tl-time">16:00</span><div class="tl-event">自由攝影時間（光線最美的黃金時段）</div></li>
+        <li><span class="tl-time">16:30</span><div class="tl-event">🚌 搭巴士下山</div></li>
+        <li><span class="tl-time">17:30</span><div class="tl-event">回鎮上逛街、泡溫泉<div class="tl-note">阿瓜斯卡連特斯有天然溫泉，約 $15/人，推薦傍晚去</div></div></li>
+        <li><span class="tl-time">19:30</span><div class="tl-event">🍽 晚餐（自理）</div></li>
+        <li><span class="tl-time">21:00</span><div class="tl-event">早點休息，明天 05:00 要起床</div></li>
+      </ul>
+
+      <div class="day-label">Day 2 — 華納比丘 · 午餐 · 返回庫斯科</div>
+      <ul class="timeline">
+        <li><span class="tl-time">05:00</span><div class="tl-event">起床、早餐（飯店含）</div></li>
+        <li><span class="tl-time">05:15</span><div class="tl-event">步行前往巴士站排隊<div class="tl-note">高峰期隊伍很長，建議比首班早 15 分鐘到</div></div></li>
+        <li><span class="tl-time">05:30</span><div class="tl-event">🚌 搭第一班巴士上山</div></li>
+        <li><span class="tl-time">06:00</span><div class="tl-event">🏔 進入遺址，直奔<strong>華納比丘第一梯次</strong>入口<div class="tl-note">路線三門票，6 人提前 2–3 個月訂好，帶紙本或手機票</div></div></li>
+        <li><span class="tl-time">09:30</span><div class="tl-event">完成華納比丘下山，在遺址自由活動<div class="tl-note">可走路線二剩下沒拍到的角度，或就坐著欣賞雲霧繚繞的景色</div></div></li>
+        <li><span class="tl-time">10:30</span><div class="tl-event">🚌 搭巴士下山回鎮上</div></li>
+        <li><span class="tl-time">11:00</span><div class="tl-event">購物紀念品（鎮上有秘魯羊駝毛製品）</div></li>
+        <li><span class="tl-time">12:00</span><div class="tl-event">🍽 午餐（鎮上自理）</div></li>
+        <li><span class="tl-time">14:00</span><div class="tl-event">🚂 搭火車返回歐雅亞坦坦博<div class="tl-note">建議回程升級 Vistadome +$65/人，沿途景色最美</div></div></li>
+        <li><span class="tl-time">15:30</span><div class="tl-event">抵達歐雅亞坦坦博，搭廂型車回庫斯科</div></li>
+        <li><span class="tl-time">17:30</span><div class="tl-event">🏠 抵達庫斯科，行程完成</div></li>
+      </ul>
+
+      <div class="plan-summary">
+        <strong>費用估算（6 人）：</strong>Yapa 2-day 火車套餐 ≈$1,914 + 華納比丘 6×$65=$390 + 回程火車升級 6×$65=$390 + 餐費等 ≈ <strong>合計約 $2,700–3,000 USD</strong>（不含住宿，住宿約另需 $720–1,200 USD 含稅）
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 方案 B ── -->
+  <div>
+    <div class="plan-header" style="background: linear-gradient(90deg, #0a2a40, #1a5276);">
+      <h3>方案 B｜深度雙路線版（體力充足者）</h3>
+      <div class="subtitle">第 1 天多走一個角度 · 第 2 天含路線三完整版 · 最大化遊覽深度</div>
+    </div>
+    <div class="plan-body">
+
+      <div class="day-label">Day 1 — 提早出發，第一天走路線一 + 路線二</div>
+      <ul class="timeline">
+        <li><span class="tl-time">06:30</span><div class="tl-event">廂型車從庫斯科出發（比方案 A 早 30 分鐘）</div></li>
+        <li><span class="tl-time">09:00</span><div class="tl-event">抵達歐雅亞坦坦博，搭 09:00 火車</div></li>
+        <li><span class="tl-time">10:30</span><div class="tl-event">抵達阿瓜斯卡連特斯，放行李、快速用餐</div></li>
+        <li><span class="tl-time">11:30</span><div class="tl-event">🚌 巴士上山</div></li>
+        <li><span class="tl-time">12:00</span><div class="tl-event">🏔 進遺址，先走<strong>路線一</strong>（上層觀景台 + 馬丘比丘山方向）<div class="tl-note">適合攝影，可拍到整個遺址全景</div></div></li>
+        <li><span class="tl-time">14:30</span><div class="tl-event">換票走<strong>路線二</strong>（經典路線，導遊帶路）<div class="tl-note">需預先購買兩種路線票</div></div></li>
+        <li><span class="tl-time">17:00</span><div class="tl-event">🚌 下山，晚餐、休息</div></li>
+      </ul>
+
+      <div class="day-label">Day 2 — 華納比丘 + 路線三完整探索</div>
+      <ul class="timeline">
+        <li><span class="tl-time">05:00</span><div class="tl-event">起床出發，搶首班巴士</div></li>
+        <li><span class="tl-time">06:00</span><div class="tl-event">🏔 <strong>華納比丘第一梯次</strong>（3.5 小時）</div></li>
+        <li><span class="tl-time">09:30</span><div class="tl-event">走<strong>路線三</strong>下層廢墟 + 農業梯田<div class="tl-note">此時遊客漸多，但山頂剛下來心情最好</div></div></li>
+        <li><span class="tl-time">11:00</span><div class="tl-event">🚌 下山，午餐</div></li>
+        <li><span class="tl-time">13:00</span><div class="tl-event">最後購物、整理行李</div></li>
+        <li><span class="tl-time">15:00</span><div class="tl-event">🚂 搭火車返回（Vistadome 觀景艙）</div></li>
+        <li><span class="tl-time">18:30</span><div class="tl-event">🏠 抵達庫斯科</div></li>
+      </ul>
+
+      <div class="plan-summary">
+        <strong>適合：</strong>體力好、喜歡拍照、希望把馬丘比丘走得最透徹的旅人。<br>
+        <strong>注意：</strong>需額外購買路線一門票，費用略高；第 1 天行程較緊湊。
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 方案 C ── -->
+  <div>
+    <div class="plan-header" style="background: linear-gradient(90deg, #4a1a00, #873600);">
+      <h3>方案 C｜高海拔緩適版（高山症風險者適用）</h3>
+      <div class="subtitle">庫斯科多待一晚適應 · 第 1 天輕鬆抵達 · 不趕時間 · 健康優先</div>
+    </div>
+    <div class="plan-body">
+
+      <div class="warning">
+        <strong>⚠ 高山症提醒：</strong>庫斯科海拔 3,400 米，阿瓜斯卡連特斯 2,040 米（反而低一點），馬丘比丘 2,430 米。若剛到庫斯科感覺不適，強烈建議先休息 1–2 天再出發。
+      </div>
+
+      <div class="day-label">Day 0（可選）— 在庫斯科適應高海拔</div>
+      <ul class="timeline">
+        <li><span class="tl-time">全天</span><div class="tl-event">在庫斯科市區輕鬆逛，避免劇烈運動<div class="tl-note">多喝古柯葉茶（免費）、補水、早睡。如有嚴重頭痛，可詢問藥局購買 Diamox</div></div></li>
+      </ul>
+
+      <div class="day-label">Day 1 — 輕鬆出發，下午短暫參觀</div>
+      <ul class="timeline">
+        <li><span class="tl-time">08:00</span><div class="tl-event">廂型車出發（較晚，不趕）</div></li>
+        <li><span class="tl-time">10:00</span><div class="tl-event">歐雅亞坦坦博搭 10:30 火車</div></li>
+        <li><span class="tl-time">12:00</span><div class="tl-event">抵達阿瓜斯卡連特斯，豐盛午餐、rest</div></li>
+        <li><span class="tl-time">14:00</span><div class="tl-event">🚌 上山，走<strong>路線二</strong>（2.5 小時，由導遊帶領）</div></li>
+        <li><span class="tl-time">17:00</span><div class="tl-event">🚌 下山，泡溫泉放鬆，早睡</div></li>
+      </ul>
+
+      <div class="day-label">Day 2 — 從容早起，華納比丘第二梯次</div>
+      <ul class="timeline">
+        <li><span class="tl-time">05:30</span><div class="tl-event">起床（比方案 A/B 晚 30 分鐘），早餐後出發</div></li>
+        <li><span class="tl-time">06:30</span><div class="tl-event">🚌 巴士上山</div></li>
+        <li><span class="tl-time">07:00</span><div class="tl-event">🏔 <strong>華納比丘第二梯次</strong>（07:00 入口）<div class="tl-note">比第一梯次稍微不擠，適合體力稍保守的旅人，同樣 3.5 小時</div></div></li>
+        <li><span class="tl-time">10:30</span><div class="tl-event">完成下山，遺址自由活動</div></li>
+        <li><span class="tl-time">11:30</span><div class="tl-event">🚌 下山回鎮上</div></li>
+        <li><span class="tl-time">12:00</span><div class="tl-event">🍽 悠閒午餐</div></li>
+        <li><span class="tl-time">14:30</span><div class="tl-event">🚂 搭火車返回（Vistadome）</div></li>
+        <li><span class="tl-time">18:30</span><div class="tl-event">🏠 抵達庫斯科，輕鬆結束</div></li>
+      </ul>
+
+      <div class="plan-summary">
+        <strong>適合：</strong>第一次到高海拔地區、有輕微高山症擔憂、或偏好不趕時間的旅人。<br>
+        <strong>優勢：</strong>華納比丘第二梯次（07:00）仍能在日出後的清晨光線中攀頂，且稍微不那麼擁擠。
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════
+     SECTION 7 — 訂票攻略 & 注意事項
+════════════════════════════════════ -->
+<section>
+  <h2>七、DIY 訂票步驟 & 注意事項</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>📋 建議訂票順序</h3>
+      <ul class="info-list">
+        <li><strong>第 1 步</strong>｜先到 <a href="https://tuboleto.cultura.pe/" target="_blank" style="color:#2d6a4f;">tuboleto.cultura.pe</a> 查詢 9 月目標日期的<strong>華納比丘名額</strong>是否仍有空位</li>
+        <li><strong>第 2 步</strong>｜確認後立即購買<strong>入場票（路線二 + 路線三）</strong>及<strong>華納比丘加購票</strong>——官方最便宜；若語言是障礙可改用 GetYourGuide</li>
+        <li><strong>第 3 步</strong>｜購買<strong>火車票</strong>：去程 Expedition，回程可選 Vistadome（<a href="https://www.perurail.com" target="_blank" style="color:#2d6a4f;">perurail.com</a> 或 <a href="https://www.incarail.com" target="_blank" style="color:#2d6a4f;">incarail.com</a>）</li>
+        <li><strong>第 4 步</strong>｜預訂<strong>廂型車接駁</strong>（庫斯科 → 歐雅亞坦坦博），可請飯店協助安排</li>
+        <li><strong>第 5 步</strong>｜預訂<strong>阿瓜斯卡連特斯住宿</strong>（建議選距巴士站近的飯店）</li>
+        <li><strong>第 6 步</strong>｜視需求預約<strong>私人導遊</strong>（線上或抵達後現場洽談）</li>
+        <li><strong>第 7 步</strong>｜購買旅遊保險（含高山醫療與行程取消保障）</li>
+        <li><strong>第 8 步</strong>｜確認護照有效期至少 6 個月以上</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🎒 實用小提醒</h3>
+      <ul class="info-list">
+        <li>遺址內<strong>不可帶三腳架</strong>（手持相機可以）</li>
+        <li>背包限 20L 以下，大行李需寄存</li>
+        <li>禁止帶入食物，飲水可以</li>
+        <li>無人機全面禁止</li>
+        <li>穿防雨外套，9 月可能短暫陣雨</li>
+        <li>建議穿登山鞋，石板路面濕滑</li>
+        <li>遺址內無 WiFi，出發前下載 Maps.me 離線地圖</li>
+        <li>備好現金索爾（PEN），鎮上部分小店不收信用卡</li>
+        <li>山腳巴士可現場購票，無需提前訂</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warning">
+    <strong>⚠ 9 月旺季提醒：</strong>9 月是馬丘比丘乾季尾、天氣最好的月份，遊客量大。華納比丘每天僅 400 個名額，6 人要在同一梯次入場需提早確認。建議先到官方或 GetYourGuide 查詢實際餘額，再決定訂購平台。
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<footer>
+  <p>資料來源：<a href="https://tuboleto.cultura.pe" target="_blank">秘魯文化部官方售票</a> · <a href="https://www.perurail.com" target="_blank">Peru Rail</a> · <a href="https://www.incarail.com" target="_blank">Inca Rail</a> · <a href="https://www.getyourguide.com/machu-picchu-l1570/entry-tickets-tc123/" target="_blank">GetYourGuide</a> · <a href="https://www.viator.com/Cusco-attractions/Machu-Picchu/d937-a3358" target="_blank">Viator</a></p>
+  <p style="margin-top:8px;opacity:0.6;">本指南整理於 2026 年 5 月，價格與時刻表以實際訂票時為準</p>
+</footer>
+
+</body>
+</html>
